@@ -67,9 +67,9 @@
 /* -----------Css-variable------ */
 
 :root {
-    --light-yellow: #fdf7ec;
-    --primery: #3f67f3;
-    --dark-black: #181a22;
+    --light-yellow: #eef2fe;
+    --primery: #84309a;
+    --dark-black: #84309a;
     --dark-greay: #9599ab;
     --greay: #afafaf;
     --text-greay: #848484;
@@ -413,14 +413,36 @@ h3 {
 /* -----------Header-Css-Start------------------- */
 /* header wraper */
 header {
-    position: sticky;
-    top: 0;
+    position: absolute;
     width: 100%;
     z-index: 99999;
     transition: .4s all;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+
+header.fix_style {
+    position: fixed;
+    top: 0;
     backdrop-filter: blur(5px);
-    background-color: #fdf7ecd8;
-    border-bottom: 1px solid #cfcbc4;
+    background-color: #84309ab4;
+    padding: 0;
+    transition: none;
+    opacity: 0;
+    pointer-events: none;
+}
+
+header.fixed {
+   pointer-events: all;
+   opacity: 9;
+   transition: .4s all;
+}
+
+header.fixed .navbar {
+    padding: 0;
+}
+
+.header_color {
+	background-color: var(--dark-black);
 }
 
 /* navigation bar */
@@ -436,10 +458,12 @@ header {
     padding: 40px 12px;
     font-weight: 600;
     transition: .4s all;
+    color: var(--text-white);
 }
 
+
 .navbar-expand-lg .navbar-nav .nav-link:hover {
-    color: var(--primery);
+    color: var(--text-white);
 }
 
 .navbar-expand-lg .navbar-nav .nav-item .btn_block {
@@ -487,6 +511,7 @@ header {
     position: relative;
     right: 8px;
     top: 2px;
+    color: var(--text-white);
 }
 
 .navbar-expand-lg .navbar-nav .has_dropdown .sub_menu {
@@ -522,7 +547,7 @@ header {
 
 .navbar-expand-lg .navbar-nav .has_dropdown:hover>a,
 .navbar-expand-lg .navbar-nav .has_dropdown:hover>.drp_btn {
-    color: var(--primery);
+    color: var(--text-white);
 }
 
 .navbar-expand-lg .navbar-nav .has_dropdown:hover .sub_menu {
@@ -562,7 +587,7 @@ header {
     width: 25px;
     margin: 10px 0;
     position: relative;
-    border-top: 4px solid var(--dark-black);
+    border-top: 4px solid var(--bg-white);
     display: block;
 }
 
@@ -570,7 +595,7 @@ header {
 .toggle-bar::after {
     content: "";
     display: block;
-    background: var(--dark-black);
+    background: var(--bg-white);
     height: 4px;
     width: 30px;
     position: absolute;
@@ -614,12 +639,29 @@ header {
 /* ---------Hero-Slider-Css-Start------------------ */
 /* hero slider wraper */
 .banner_section {
-    margin-top: 70px;
+    /*margin-top: 70px;*/
+    padding-top: 170px;
+    padding-bottom: 250px;
     position: relative;
+
+    background-size: 300% 300%;
+  	background-image: linear-gradient(
+  	-45deg, 
+  	rgba(4,20,62,1) 0%, 
+  	rgba(20,42,144,1) 25%, 
+  	rgba(4,20,62,1) 51%, 
+  	rgba(20,42,144,1) 100% );  
+  	animation: AnimateBG 7s ease infinite;
+}
+
+@keyframes AnimateBG { 
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
 }
 
 .banner_section::before {
-    content: "";
+    /*content: "";
     position: absolute;
     left: 50%;
     top: 20%;
@@ -629,7 +671,7 @@ header {
     background-image: url(../images/yellow_dotes.png);
     background-repeat: no-repeat;
     background-position: bottom center;
-    background-size: contain;
+    background-size: contain;*/
 }
 
 .banner_section .container {
@@ -642,26 +684,110 @@ header {
 
 /* hero slider text */
 .banner_section .banner_text {
-    margin-top: -50px;
+    margin-top: -20px;
+    text-align: center;
 }
+
 
 /* hero slider heading h1 */
 .banner_section .banner_text h1 {
-    font-size: 50px;
-    color: var(--dark-black);
+    font-size: 120px;
+    color: var(--text-white);
     letter-spacing: -1.5px;
     font-weight: 700;
     margin-bottom: 20px;
 }
 
-.banner_section .banner_text h1 span {
-    color: var(--primery);
+.banner_section .banner_text p {
+    padding: 0 80px;
+    color: var(--text-white);
+}
+
+.banner_section .banner_text .qrcode {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.banner_section .banner_text .qrcode p {
+    padding: 10px 150px;
 }
 
 .banner_section .banner_text .type-wrap span {
     font-weight: 700;
     color: var(--primery);
 }
+
+
+/* hero static image */
+
+.banner_section .hero_imgleft {
+    position: relative;
+    margin-top: 150px;
+}
+
+
+.banner_section .hero_imgleft img{
+    content: "";
+    position: absolute;
+    transform: translate(15%, -50%) rotate(8deg);
+}
+
+.banner_section .hero_imgleft::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 46%;
+    transform: translate(-50%, -50%) rotate(8deg);
+    width: 230px;
+    height: 230px;
+    background-color: var(--bg-white);
+    z-index: -5;
+    border-radius: 30px;
+}
+
+.banner_section .hero_img_right{
+    position: relative;
+    margin-top: 0;
+}
+
+.banner_section .hero_img_right img{
+    content: "";
+    position: absolute;
+    transform: translate(15%, -60%) rotate(-8deg);
+}
+
+.banner_section .hero_img_right::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 46%;
+    transform: translate(-50%, -60%) rotate(-8deg);
+    width: 230px;
+    height: 230px;
+    background-color: var(--bg-white);
+    z-index: -5;
+    border-radius: 30px;
+}
+
+
+
+
+/* hero slider heading h2 */
+.banner_section .banner_text h2 {
+    font-size: 40px;
+    color: var(--text-white);
+    letter-spacing: -1.5px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.banner_section .banner_text h2 span {
+    color: var(--text-white);
+}
+
+
 
 /* hero slider button */
 .banner_section .app_btn {
@@ -955,7 +1081,7 @@ header {
 
 .about_section::before,
 .about_section::after {
-    content: "";
+    /*content: "";
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -966,7 +1092,7 @@ header {
     width: 100%;
     height: 410px;
     background-position: center;
-    z-index: -1;
+    z-index: -1;*/
 }
 
 .about_section .section_title {
@@ -1262,6 +1388,76 @@ iframe#youtubevideo {
     font-weight: 700;
 }
 
+/* ==============Service Images Css Start ======================== */
+.service_blocks .inner_block {
+    position: relative;
+    border-radius: 15px;
+    background-color: var(--bg-white);
+    padding: 50px 75px;
+    text-align: center;
+}
+
+.service_blocks .inner_block {
+    text-align: center;
+}
+
+.service_blocks .inner_block.dark_bg {
+    background-color: var(--dark-black);
+    background-image: url(../images/blue_dotes.png);
+    background-position: -200px 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.service_blocks .inner_block.dark_bg .star_img img {
+    filter: invert(1);
+}
+
+.service_blocks .inner_block .img {
+    position: relative;
+}
+
+.service_blocks .inner_block .img::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 0;
+    transform: translate(-50%, -50%) rotate(-9deg);
+    width: 100%;
+    height: 90%;
+    background-color: var(--primery);
+    border-radius: 30px;
+}
+
+.service_blocks .inner_block.rotate_right .img::before {
+    transform: translate(-50%, -50%) rotate(8deg);
+}
+
+.service_blocks .inner_block.rotate_left .img::before {
+    transform: translate(-50%, -50%) rotate(-8deg);
+}
+
+.service_blocks .inner_block .img img {
+    position: relative;
+    border-radius: 20px;
+    border: solid 2px var(--black); 
+}
+
+.service_blocks .inner_block .star_img img {
+    position: absolute;
+}
+
+.service_blocks .inner_block .star_img img:first-child {
+    right: 20px;
+    width: 25px;
+}
+
+.service_blocks .inner_block .star_img img:last-child {
+    left: 20px;
+    bottom: 55px;
+}
+
 /* -------------How It Work Section Css Start------------- */
 .how_it_section {
     position: relative;
@@ -1271,7 +1467,7 @@ iframe#youtubevideo {
 .how_it_inner {
     max-width: 1370px;
     margin: 0 auto;
-    background-color: var(--dark-black);
+    background-color: var(--bg-white);
     padding: 100px 0;
     border-radius: 20px;
     overflow: hidden;
@@ -1302,7 +1498,7 @@ iframe#youtubevideo {
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    background-color: var(--light-yellow);
+    background-color: var(--primery);
     margin: 0 auto;
 }
 
@@ -1322,17 +1518,18 @@ iframe#youtubevideo {
     display: block;
     width: 40px;
     height: 40px;
-    border: 1px solid var(--bg-white);
+    border: 1px solid var(--greay);
     border-radius: 100px;
     text-align: center;
     line-height: 38px;
-    color: var(--text-white);
+    color: var(--black);
     transition: .4s all;
 }
 
 .how_it_inner .steps_block .text .social li a:hover {
     background-color: var(--primery);
     border-color: var(--primery);
+    color: var(--text-white);
 }
 
 .how_it_inner .steps_block .text .tag_text {
@@ -1387,7 +1584,7 @@ iframe#youtubevideo {
 }
 
 .review_section .positive_inner .row .sticky-top {
-    top: 30px;
+    top: 110px;
 }
 
 .review_section .google_rating {
@@ -1483,11 +1680,12 @@ iframe#youtubevideo {
 .review_section.page_ban {
     position: relative;
     padding-top: 80px;
+    margin-top: 100px;
 }
 
 .review_section.page_ban::before,
 .review_section.page_ban::after {
-    content: "";
+    /*content: "";
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -1498,7 +1696,7 @@ iframe#youtubevideo {
     width: 100%;
     height: 40%;
     background-position: center;
-    z-index: -1;
+    z-index: -1;*/
 }
 
 
@@ -1539,7 +1737,7 @@ iframe#youtubevideo {
 
 .our_client::before,
 .our_client::after {
-    content: "";
+    /*content: "";
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -1550,7 +1748,7 @@ iframe#youtubevideo {
     width: 100%;
     height: 410px;
     background-position: center;
-    z-index: -1;
+    z-index: -1;*/
 }
 
 .our_client .client_list {
@@ -1585,13 +1783,22 @@ iframe#youtubevideo {
 
 .pricing_inner {
     max-width: 1370px;
-    background-color: var(--dark-black);
     padding: 100px 0;
     margin: 0 auto;
     border-radius: 20px;
     overflow: hidden;
     position: relative;
+
+    background-size: 300% 300%;
+  	background-image: linear-gradient(
+  	-45deg, 
+  	rgba(4,20,62,1) 0%, 
+  	rgba(20,42,144,1) 25%, 
+  	rgba(4,20,62,1) 51%, 
+  	rgba(20,42,144,1) 100% );  
+  	animation: AnimateBG 5s ease infinite;
 }
+
 
 .pricing_inner .dotes_blue {
     position: absolute;
@@ -1611,7 +1818,7 @@ iframe#youtubevideo {
     border-radius: 10px;
     padding: 5px;
     width: 230px;
-    margin: 50px auto;
+    margin: 30px auto;
     position: relative;
 }
 
@@ -1874,7 +2081,7 @@ iframe#youtubevideo {
 
 .downaload_section .dowanload_slider .text_block span {
     position: relative;
-    color: #ddd8cf;
+    color: #cfd2df;
 }
 
 .downaload_section .dowanload_slider {
@@ -1917,6 +2124,10 @@ iframe#youtubevideo {
     position: relative;
     border-radius: 12px;
     transition: .4s all;
+}
+
+.downaload_section .app_btn li a:hover {
+    background-color: var(--primery);
 }
 
 .downaload_section .app_btn li:last-child {
@@ -2009,9 +2220,7 @@ footer {
     padding-left: 15px !important;
     padding-right: 15px !important;
     margin-top: 50px;
-    background-image: url(../images/footer_bg.png);
-    background-repeat: no-repeat;
-    background-position: 0 0;
+    
 }
 
 footer .logo_side .logo {
@@ -2033,12 +2242,12 @@ footer .news_letter form .form-group {
 
 footer .news_letter form .form-group .form-control {
     width: 100%;
-    background-color: transparent;
     border: 1px solid var(--bg-white);
     border-radius: 10px;
     min-height: 60px;
     color: var(--text-white);
     font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 footer .news_letter form .form-group button {
@@ -2117,12 +2326,21 @@ footer .download_side .app_btn {
 footer .download_side .app_btn li a {
     display: block;
     padding: 15px 35px;
-    background-color: var(--black);
+    background-color: var(--bg-white);
     border: none;
     position: relative;
     border-radius: 12px;
     transition: .4s all;
 }
+
+footer .download_side .app_btn li a:hover {
+    background-color: var(--primery);
+}
+
+footer .download_side .app_btn li a:hover img {
+    filter: invert(1);
+}
+
 
 footer .download_side .app_btn li:last-child {
     margin-left: 25px;
@@ -2136,9 +2354,9 @@ footer .download_side .app_btn li a img {
 .footer_bottom {
     max-width: 1370px;
     margin: 0 auto;
-    background-color: #111218;
     border-radius: 20px;
     margin-top: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .footer_bottom .ft_inner {
@@ -2208,11 +2426,12 @@ footer .download_side .app_btn li a img {
 .about_us_section {
     padding-top: 80px;
     position: relative;
+    margin-top: 100px;
 }
 
 .about_us_section::before,
 .about_us_section::after {
-    content: "";
+    /*content: "";
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -2223,7 +2442,7 @@ footer .download_side .app_btn li a img {
     width: 100%;
     height: 80%;
     background-position: center;
-    z-index: -1;
+    z-index: -1;*/
 }
 
 .about_us_section #about_slider .abt_slides img {
@@ -2254,11 +2473,19 @@ footer .download_side .app_btn li a img {
 .why_choose .why_choose_inner {
     max-width: 1370px;
     margin: 0 auto;
-    background-color: var(--dark-black);
     padding: 100px 0;
     border-radius: 20px;
     overflow: hidden;
     position: relative;
+
+    background-size: 300% 300%;
+  	background-image: linear-gradient(
+  	-45deg, 
+  	rgba(4,20,62,1) 0%, 
+  	rgba(20,42,144,1) 25%, 
+  	rgba(4,20,62,1) 51%, 
+  	rgba(20,42,144,1) 100% );  
+  	animation: AnimateBG 5s ease infinite;
 }
 
 .why_choose .why_choose_inner .dotes_blue {
@@ -2314,7 +2541,7 @@ footer .download_side .app_btn li a img {
 
 .our_value_section::before,
 .our_value_section::after {
-    content: "";
+    /*content: "";
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -2325,7 +2552,7 @@ footer .download_side .app_btn li a img {
     width: 100%;
     height: 410px;
     background-position: center;
-    z-index: -1;
+    z-index: -1;*/
 }
 
 .our_value_section .value_slider {
@@ -2396,7 +2623,9 @@ footer .download_side .app_btn li a img {
 /* ==============Why We Unique Section================ */
 .unique_section {
     position: relative;
-    padding: 50px 15px 0 15px;
+    padding: 0px 15px 0 15px;
+    margin-top: -150px;
+    margin-bottom: 50px;
 }
 
 .unique_section .section_title {
@@ -2406,7 +2635,7 @@ footer .download_side .app_btn li a img {
 .unique_section .unique_inner {
     max-width: 1370px;
     margin: 0 auto;
-    background-color: var(--dark-black);
+    background-color: var(--bg-white);
     padding: 80px 0 50px 0;
     border-radius: 20px;
     overflow: hidden;
@@ -2418,6 +2647,7 @@ footer .download_side .app_btn li a img {
     top: -40%;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 0;
 }
 
 .unique_section .unique_inner .mb_5 {
@@ -2477,6 +2707,7 @@ footer .download_side .app_btn li a img {
     width: 120px;
     aspect-ratio: 1/1;
     opacity: 0.9;
+    border: none;
 }
 
 
@@ -2490,11 +2721,19 @@ footer .download_side .app_btn li a img {
 .testimonial_inner {
     max-width: 1370px;
     margin: 0 auto;
-    background-color: var(--dark-black);
     padding: 100px 0;
     border-radius: 20px;
     overflow: hidden;
     position: relative;
+
+    background-size: 300% 300%;
+  	background-image: linear-gradient(
+  	-45deg, 
+  	rgba(4,20,62,1) 0%, 
+  	rgba(20,42,144,1) 25%, 
+  	rgba(4,20,62,1) 51%, 
+  	rgba(20,42,144,1) 100% );  
+  	animation: AnimateBG 5s ease infinite;
 }
 
 .testimonial_inner .dotes_blue {
@@ -2645,11 +2884,12 @@ footer .download_side .app_btn li a img {
 .experts_team_section {
     margin-top: 50px;
     position: relative;
+    border-bottom: 1px solid rgba(63, 103, 243, .2);
 }
 
 .experts_team_section::before,
 .experts_team_section::after {
-    content: "";
+    /*content: "";
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -2660,7 +2900,7 @@ footer .download_side .app_btn li a img {
     width: 100%;
     height: 410px;
     background-position: center;
-    z-index: -1;
+    z-index: -1;*/
 }
 
 .experts_team_section .section_title {
@@ -2799,8 +3039,8 @@ footer .download_side .app_btn li a img {
 
 .faq_section .nav-tabs .nav-item.show .nav-link,
 .faq_section .nav-tabs .nav-link.active {
-    background-color: #5379e4;
-    color: #fff;
+    background-color: var(--primery);
+    color: var(--text-white);
 }
 
 .faq_section .accordion {
@@ -2872,12 +3112,20 @@ footer .download_side .app_btn li a img {
 .download_app .task_block {
     max-width: 1370px;
     margin: 0 auto;
-    background-color: var(--dark-black);
     padding: 0 150px;
     position: sticky;
     z-index: 99;
     border-radius: 30px;
     overflow: hidden;
+
+    background-size: 300% 300%;
+  	background-image: linear-gradient(
+  	-45deg, 
+  	rgba(4,20,62,1) 0%, 
+  	rgba(20,42,144,1) 25%, 
+  	rgba(4,20,62,1) 51%, 
+  	rgba(20,42,144,1) 100% );  
+  	animation: AnimateBG 5s ease infinite;
 }
 
 .download_app .frame_img {
@@ -2933,6 +3181,15 @@ footer .download_side .app_btn li a img {
     transition: .4s all;
 }
 
+.download_app .app_btn li a:hover {
+    background-color: var(--primery);
+}
+
+.download_app .app_btn li a:hover img {
+    filter: invert(1);
+}
+
+ 
 .download_app .app_btn li:last-child {
     margin-left: 15px;
 }
@@ -2946,11 +3203,12 @@ footer .download_side .app_btn li a img {
 .pricing_page_block {
     position: relative;
     padding-top: 80px;
+    margin-top: 100px;
 }
 
 .pricing_page_block::before,
 .pricing_page_block::after {
-    content: "";
+    /*content: "";
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -2961,7 +3219,7 @@ footer .download_side .app_btn li a img {
     width: 100%;
     height: 80%;
     background-position: center;
-    z-index: -1;
+    z-index: -1;*/
 }
 
 .pricing_page_block .table_content {
@@ -3057,6 +3315,7 @@ footer .download_side .app_btn li a img {
 .our_resource {
     position: relative;
     padding: 80px 0 40px 0;
+    margin-top: 100px;
 }
 
 .our_resource .section_title {
@@ -3065,11 +3324,19 @@ footer .download_side .app_btn li a img {
 
 .our_resource .mail_block {
     margin: 0 auto;
-    background-color: var(--dark-black);
     padding: 70px 60px;
     border-radius: 20px;
     overflow: hidden;
     position: relative;
+
+    background-size: 300% 300%;
+  	background-image: linear-gradient(
+  	-45deg, 
+  	rgba(4,20,62,1) 0%, 
+  	rgba(20,42,144,1) 25%, 
+  	rgba(4,20,62,1) 51%, 
+  	rgba(20,42,144,1) 100% );  
+  	animation: AnimateBG 7s ease infinite;
 }
 
 .our_resource .mail_block .dotes_blue {
@@ -3332,6 +3599,7 @@ footer .download_side .app_btn li a img {
 .blog_detail_section {
     position: relative;
     padding: 80px 0 50px 0;
+    margin-top: 100px;
 }
 
 .blog_head {
@@ -3593,11 +3861,12 @@ footer .download_side .app_btn li a img {
 .contact_section {
     position: relative;
     padding: 80px 0 50px 0;
+    margin-top: 100px;
 }
 
 .contact_section::before,
 .contact_section::after {
-    content: "";
+    /*content: "";
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -3608,7 +3877,7 @@ footer .download_side .app_btn li a img {
     width: 100%;
     height: 410px;
     background-position: center;
-    z-index: -1;
+    z-index: -1;*/
 }
 
 .contact_section .section_title {
@@ -3654,7 +3923,7 @@ footer .download_side .app_btn li a img {
 .contact_inner {
     max-width: 1370px;
     margin: 0 auto;
-    background-color: var(--dark-black);
+    background-color: var(--bg-white);
     padding: 75px 0;
     border-radius: 30px;
     overflow: hidden;
@@ -3678,15 +3947,15 @@ footer .download_side .app_btn li a img {
 
 .contact_form form .form-group .form-control {
     border-radius: 10px;
-    border: 1px solid #636778;
+    border: 1px solid var(--greay);
     color: var(--text-white);
     height: 60px;
     padding: 10px 20px;
-    background-color: #323542;
+    background-color: var(--light-yellow);
 }
 
 .contact_form form .form-group .form-control::placeholder {
-    color: var(--text-white);
+    color: var(--black);
 }
 
 .contact_form form .form-group textarea.form-control {
@@ -3941,11 +4210,19 @@ footer .download_side .app_btn li a img {
 
 .signup_section .form_block .side_screen {
     width: 50%;
-    background-color: var(--dark-black);
     padding: 75px 0;
     border-radius: 30px;
     overflow: hidden;
     position: relative;
+
+    background-size: 300% 300%;
+  	background-image: linear-gradient(
+  	-45deg, 
+  	rgba(4,20,62,1) 0%, 
+  	rgba(20,42,144,1) 25%, 
+  	rgba(4,20,62,1) 51%, 
+  	rgba(20,42,144,1) 100% );  
+  	animation: AnimateBG 7s ease infinite;
 }
 
 .signup_section .form_block .side_screen .dotes_blue {

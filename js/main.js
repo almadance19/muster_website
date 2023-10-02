@@ -397,7 +397,23 @@ $(window).scroll(function () {
     $('#Gotop').fadeOut(500);
 
   }
-})
+});
+
+// Fix Header Js
+$(window).scroll(function(){
+  if ($(window).scrollTop() >= 250) {
+      $('header').addClass('fix_style');
+  }
+  else {
+      $('header').removeClass('fix_style');
+  }
+  if ($(window).scrollTop() >= 260) {
+      $('header').addClass('fixed');
+  }
+  else {
+      $('header').removeClass('fixed');
+  }
+});
 
 
 //YOUTUBE VIDEO

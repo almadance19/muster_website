@@ -1,7 +1,7 @@
 :root {
-    --light-yellow: #fdf7ec;
-    --primery: #3f67f3;
-    --dark-black: #181a22;
+    --light-yellow: #eef2fe;
+    --primery: #84309a;
+    --dark-black: #84309a;
     --dark-greay: #9599ab;
     --black: #000000;
     --text-white: #ffffff;
@@ -13,6 +13,10 @@
 
     .youtube-video .modal-dialog {
         max-width: 1040px !important;
+    }
+
+    .interface_section .screen_slider {
+        min-height: 650px;
     }
 }
 
@@ -35,6 +39,12 @@
     .section_title h2 {
         font-size: 45px;
     }
+
+
+    .interface_section .screen_slider {
+        min-height: 550px;
+    }
+
 }
 
 
@@ -42,6 +52,28 @@
 
     .row_am {
         padding: 50px 0;
+    }
+
+    /* hero section */
+
+    .banner_section .banner_text h1 {
+        font-size: 100px;
+    }
+
+    .banner_section .banner_text p {
+        padding: 0 40px;
+    }
+
+    .banner_section .banner_text .qrcode p {
+        padding: 10px 50px;
+    }
+
+    .banner_section .hero_imgleft img {
+        transform: translate(3%, -50%) rotate(8deg);
+    }
+
+    .banner_section .hero_img_right img {
+        transform: translate(2%, -60%) rotate(-8deg);
     }
 
     /* navigation bar section */
@@ -94,7 +126,7 @@
     }
 
     .interface_section .screen_slider {
-        min-height: 530px;
+        min-height: 470px;
     }
 
     .key_innner .owl-nav button.owl-next {
@@ -141,6 +173,10 @@
         padding: 50px 30px;
     }
 
+    .review_section.page_ban {
+        margin-top: 50px;
+    }
+
     .blog_listings .listing_block .blog_text {
         padding: 0 20px;
     }
@@ -175,11 +211,16 @@
 
     .banner_section {
         text-align: center;
+        padding-top: 140px;
     }
 
     .banner_section .app_btn,
     .banner_section .used_app {
         justify-content: center;
+    }
+
+    .unique_section {
+        margin-top: 50px;
     }
 
     /* navigation section */
@@ -206,6 +247,14 @@
         box-shadow: 0 4px 10px #e9e9e9;
     }
 
+    .navbar-expand-lg .navbar-nav .nav-link {
+    	color: var(--black);
+    }
+
+    .navbar-expand-lg .navbar-nav .has_dropdown:hover>a, .navbar-expand-lg .navbar-nav .has_dropdown:hover>.drp_btn {
+    	color: var(--black);
+    }
+
     .navbar-expand-lg .navbar-nav .nav-link.dark_btn {
         margin: 0;
     }
@@ -225,6 +274,7 @@
         position: absolute;
         right: 0;
         padding: 0 10px;
+        color: var(--black);
     }
 
     .navbar-expand-lg .navbar-nav .has_dropdown .sub_menu {
@@ -278,6 +328,7 @@
         width: 100%;
         display: block;
         text-align: left;
+        color: var(--black);
     }
 
     .navbar-expand-lg .navbar-nav .has_dropdown .sub_menu ul li a {
@@ -290,13 +341,17 @@
 
     /* banner section */
 
+    .banner_section .banner_content_colom {
+    order: -1;
+    }
+
     .banner_section .banner_text {
     	margin-top: 0;
     	padding: 0 50px;
     }
 
     .banner_section .banner_text h1 {
-        font-size: 40px;
+        font-size: 80px;
     }
 
 
@@ -311,6 +366,34 @@
     .banner_section .banner_slider .right_icon {
         right: 0;
     }
+
+
+    .banner_section .hero_imgleft {
+    transform: translate(5%, 0%) rotate(8deg);
+    }
+
+    .banner_section .hero_imgleft img {
+    transform: translate(-50%, -50%) rotate(8deg);
+    }
+
+
+    .banner_section .hero_img_right {
+    transform: translate(5%, 0%) rotate(-8deg);
+    }
+
+    .banner_section .hero_img_right img {
+    transform: translate(-50%, -55%) rotate(-8deg);
+    }
+
+    .banner_section .hero_imgleft, .banner_section .hero_img_right {
+        margin-top: 250px;
+    }
+
+    .spinBlock {
+        margin-top: 260px;
+    }
+
+
 
     /* interface section */
     .section_title h2 img {
@@ -382,6 +465,10 @@
 
     .service_section .service_text h2 br {
         display: none;
+    }
+
+    .service_blocks .inner_block {
+        padding: 50px;
     }
 
     .review_section .review_side .review_block {
@@ -465,7 +552,7 @@
 
     /* ===========About Us Page Css Start================ */
     .about_us_section {
-        padding-top: 60px;
+        padding-top: 30px;
     }
 
     .why_choose .why_choose_inner {
@@ -505,7 +592,7 @@
     }
 
     .faq_section {
-        margin-top: -50px;
+        margin-top: 0px;
     }
 
     .faq_section .nav-tabs .nav-item button {
@@ -532,7 +619,7 @@
 
     /* =========Pricing Page Css Start=============== */
     .pricing_page_block {
-        padding: 80px 0;
+        padding: 30px 0;
     }
 
     .table_content .pricing_table .pricing_block .pricing_title .puprple_btn {
@@ -643,7 +730,7 @@
     }
 
     .blog_detail_section {
-        padding: 80px 20px 50px 20px;
+        padding: 30px 20px 50px 20px;
     }
 
     .comment_section,
@@ -698,15 +785,22 @@
 
     /* banner section */
     .banner_section {
-        margin-top: 60px;
+        /*margin-top: 60px;*/
     }
+
 
     .banner_section .banner_text {
         /*margin-top: -30px;*/
+        padding: 0;
     }
 
+    .banner_section .banner_text .qrcode p {
+        padding: 10px 0;
+    }
+
+
     .banner_section .banner_text h1 {
-        font-size: 35px;
+        font-size: 80px;
     }
 
     .banner_section .app_btn,
@@ -843,6 +937,10 @@
         padding-left: 0;
     }
 
+    .service_blocks .inner_block {
+        padding: 40px 60px;
+    }
+
     .how_it_inner {
         padding: 50px 0;
     }
@@ -880,6 +978,10 @@
 
     .positive_inner .section_title br {
         display: block;
+    }
+
+    .review_section .positive_inner .row .sticky-top {
+        top: 0px;
     }
 
     .review_section .review_side .review_block:last-child {
@@ -957,6 +1059,10 @@
 
     .pricing_inner .pannel_block .pricing {
         padding: 20px 0 15px 0;
+    }
+
+    .pricing_inner .contact_text {
+        margin-top: 0;
     }
 
     .downaload_section .center_screen .img img {
@@ -1174,7 +1280,7 @@
     }
 
     .faq_section {
-        margin-top: 0;
+        margin-top: 30px;
     }
 
     .faq_section .nav-tabs {
@@ -1219,7 +1325,7 @@
 
     /* ===============Pricing Page Css Start================== */
     .pricing_page_block {
-        padding: 60px 0;
+        padding: 30px 0;
     }
 
     .pricing_page_block .table_content {
@@ -1284,7 +1390,7 @@
 
     /* ===========Blog Page Css Start============ */
     .our_resource {
-        padding: 60px 0 30px 0;
+        padding: 30px 0 30px 0;
     }
 
     .our_resource .section_title,
@@ -1532,8 +1638,20 @@
         padding: 0 10px;
     }
 
+    .hero_img_right {
+        display: none;
+    }
+
+    .banner_section .banner_text p {
+        padding: 0 20px;
+    }
+
+    .banner_section .hero_imgleft{
+    transform: translate(55%, 20%) rotate(8deg);
+    }
+
     .banner_section .banner_text h1 {
-        font-size: 30px;
+        font-size: 80px;
     }
 
     .banner_section .banner_text {
@@ -1562,7 +1680,7 @@
     }
 
     .blog_detail_section {
-        padding: 80px 10px 50px 10px;
+        padding: 30px 10px 50px 10px;
     }
 
     .comment_section,
