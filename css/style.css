@@ -488,7 +488,7 @@ header.fixed .navbar {
 }
 
 .navbar-brand img {
-    width: 130px;
+    width: 90px;
 }
 
 .navbar-brand h3 {
@@ -2225,6 +2225,8 @@ footer {
 
 footer .logo_side .logo {
     margin-bottom: 40px;
+    width: 50px;
+
 }
 
 footer .logo_side .logo h3 {
