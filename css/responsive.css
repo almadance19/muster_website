@@ -211,7 +211,7 @@
 
     .banner_section {
         text-align: center;
-        padding-top: 140px;
+        padding-top: 90px;
     }
 
     .banner_section .app_btn,
@@ -356,7 +356,7 @@
 
 
     .banner_section .banner_slider {
-        margin-top: 50px;
+        margin-top: 40px;
     }
 
     .banner_section .banner_slider .left_icon {
@@ -386,7 +386,7 @@
     }
 
     .banner_section .hero_imgleft, .banner_section .hero_img_right {
-        margin-top: 250px;
+        margin-top: 150px;
     }
 
     .spinBlock {

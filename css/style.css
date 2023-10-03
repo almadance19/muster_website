@@ -640,8 +640,8 @@ header.fixed .navbar {
 /* hero slider wraper */
 .banner_section {
     /*margin-top: 70px;*/
-    padding-top: 170px;
-    padding-bottom: 250px;
+    padding-top: 70px;
+    padding-bottom: 120px;
     position: relative;
 
     background-size: 300% 300%;
