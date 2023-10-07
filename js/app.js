@@ -51,7 +51,7 @@ function getUser() {
         }).then(function (data) {
           console.log(data);
 
-          if (data="NOTHING FOUND") {
+          if (data=="NOTHING FOUND") {
             output.innerHTML = "ERROR 404";
             document.getElementById("success_message").innerHTML = "Unvalid URL  or  Ticket already Process";
             document.getElementById("name_display").innerHTML = "Get in contact if you have questions regarding your booking." ;
