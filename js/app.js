@@ -60,6 +60,7 @@ function getUser() {
             output.innerHTML = "";
             document.getElementById("success_message").innerHTML = "Ticket already Processed";
             document.getElementById("name_display").innerHTML = "You can still send you the ticket to another Email." ;
+            
             idinput.value = "";
 
           } else {
@@ -69,12 +70,13 @@ function getUser() {
             document.getElementById("name_display").innerHTML = data["user"][5];
             document.getElementById("user_message").innerHTML = "Eine Email von info@alma-dance.com mit dem Ticket wurde geschickt. Bitte prüft auch deinen Spamordner.";
             document.getElementById("success_message").innerHTML = "Your Booking is completed";
+            activeinput.innerHTML = "You can send you the ticket to another Email.";
             
             emailinput.innerHTML = data["user"][3];
             nameinput.innerHTML = data["user"][5];
             coursesinput.innerHTML = data["user"][9];
             idinput.value = data["user"][3];
-            activeinput.innerHTML = "";
+            
             lastpaymentinput.innerHTML = data["user"][13];
             saldoinput.innerHTML = data["user"][7]+' '+data["user"][15];
             anmerkungeninput.innerHTML = "You received just now an Email with the Ticket & Invoice. Please check also in your spam folder.";
@@ -122,12 +124,12 @@ function showPayment() {
             emailinput.innerHTML = data["user"][3];
             nameinput.innerHTML = data["user"][5];
             coursesinput.innerHTML = data["user"][9];
-            idinput.innerHTML = data[0];
-            activeinput.innerHTML = data[2];
+            idinput.innerHTML = "";
+            activeinput.innerHTML = "";
             lastpaymentinput.innerHTML = data["user"][13];
             saldoinput.innerHTML = data["user"][7]+' '+data["user"][15];
             anmerkungeninput.innerHTML = "You received just now an Email with the Ticket & Invoice. Please check also in your spam folder.";
-            nextpaymentinput.innerHTML = data[4];
+            nextpaymentinput.innerHTML = "";
 
             }
 
