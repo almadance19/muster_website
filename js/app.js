@@ -11,8 +11,9 @@ function getInit() {
 };
 
 // call API COURSES
-const url = 'https://script.google.com/macros/s/AKfycby7s_9X5FlEV5ld81wPmDbKco2-flF2HSoGEOKfAuPwAndKSZSneWbqHZJnD72ff49n/exec';
-const url_ticket = 'https://script.google.com/macros/s/AKfycbycvcYnpIKNHRX60XdEohnGpKdp7v2XEARMQL-JzuMlyziVPOw5W0226zNxyxGCG6Vr/exec';
+const url = 'https://script.google.com/macros/s/AKfycbwKUYsgJEnRJcFJaR2_9-RL16mK6uqaKgMmIxqiJJUXRS3aaAA76aSB2uQaf6hm8L3j/exec';
+
+const url_ticket = 'https://script.google.com/macros/s/AKfycbxxMBD8CovNgtVky37G6Kkfvp3ba-xHgsjvTqewz8nLaNoorZElDcry7se8RMW5Yfmz/exec';
 
 //get buttons 
 const output = document.querySelector('.output');
