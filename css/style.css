@@ -417,7 +417,7 @@ header {
     width: 100%;
     z-index: 99999;
     transition: .4s all;
-    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    border-bottom: 0px;
 }
 
 header.fix_style {
