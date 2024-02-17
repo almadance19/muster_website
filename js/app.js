@@ -11,9 +11,9 @@ function getInit() {
 };
 
 // call API COURSES
-const url = 'https://script.google.com/macros/s/AKfycbwKUYsgJEnRJcFJaR2_9-RL16mK6uqaKgMmIxqiJJUXRS3aaAA76aSB2uQaf6hm8L3j/exec';
+const url = 'https://script.google.com/macros/s/AKfycbzwBuxPXbT_mU0Dy3kKX6RTNdQd8MBIvysLZa54bVnd_bpuS_4tooLeYbqtnUykyvgz/exec';
 
-const url_ticket = 'https://script.google.com/macros/s/AKfycbxxMBD8CovNgtVky37G6Kkfvp3ba-xHgsjvTqewz8nLaNoorZElDcry7se8RMW5Yfmz/exec';
+const url_ticket = 'https://script.google.com/macros/s/AKfycbzKF4ruqlsWoyhz9epStqEmwYJroN9I1Hw8mx0Mccfr46BmUv3Xb8BW1Xh475jYK7_K/exec';
 
 //get buttons 
 const output = document.querySelector('.output');
@@ -59,6 +59,7 @@ function getUser() {
           if (data=="NOTHING FOUND") {
             output.innerHTML = "";
             document.getElementById("success_message").innerHTML = "Ticket already Processed";
+            document.getElementById("success_message").style = "color: #800000";
             document.getElementById("name_display").innerHTML = "You can still send you the ticket to another Email." ;
             
             idinput.value = "";
@@ -70,6 +71,7 @@ function getUser() {
             document.getElementById("name_display").innerHTML = data["user"][5];
             document.getElementById("user_message").innerHTML = "Eine Email von info@alma-dance.com mit dem Ticket wurde geschickt. Bitte prüft auch deinen Spamordner.";
             document.getElementById("success_message").innerHTML = "Your Booking is completed";
+            document.getElementById("success_message").style = "color: #800000";
             activeinput.innerHTML = "You can send you the ticket to another Email.";
             
             emailinput.innerHTML = data["user"][3];
@@ -95,6 +97,9 @@ function showPayment() {
     const email = idinput.value;
     const param_value = nextpaymentinput.value;
     console.log(param_value+email);
+    btn_ticket.disabled = true;
+    btn_ticket.innerText = "Sending";
+    document.getElementById("name_display").innerHTML = "Sending.." ;
     //var email_value = document.querySelector('input[name=email]').value;
     //var param_value = 'cs_test_b1xpdTLVaCKt08hp62mdGKfbCsVarlBfNacqwabzJFFreUYbnfWmU6QUzk';
       if (param_value != '') {
@@ -111,6 +116,7 @@ function showPayment() {
           if (data=="NOTHING FOUND") {
             output.innerHTML = "";
             document.getElementById("success_message").innerHTML = "Ticket already Processed";
+            document.getElementById("success_message").style = "color: #800000";
             document.getElementById("name_display").innerHTML = "You can still send you the ticket to another Email." ;
 
           } else {
@@ -119,7 +125,8 @@ function showPayment() {
   
             document.getElementById("name_display").innerHTML = data["user"][5];
             document.getElementById("user_message").innerHTML = "Eine Email von info@alma-dance.com mit dem Ticket wurde geschickt. Bitte prüft auch deinen Spamordner.";
-            document.getElementById("success_message").innerHTML = "Your Ticket was sent:";
+            document.getElementById("success_message").innerHTML = "Your Ticket was sent";
+            document.getElementById("success_message").style = "color: #800000";
             
             emailinput.innerHTML = data["user"][3];
             nameinput.innerHTML = data["user"][5];
@@ -130,6 +137,7 @@ function showPayment() {
             saldoinput.innerHTML = data["user"][7]+' '+data["user"][15];
             anmerkungeninput.innerHTML = "You received just now an Email with the Ticket & Invoice. Please check also in your spam folder.";
             nextpaymentinput.innerHTML = "";
+            btn_ticket.disabled = false;
 
             }
 
@@ -138,3 +146,5 @@ function showPayment() {
           output.innerHTML = "Valides Email eingeben";
         }
   }
+
+//// MESSAGES -----------------------------------------------
