@@ -83,8 +83,23 @@
       }
     }
     </script>
-
-  <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '285666991037771');
+      fbq('track', 'PageView');
+      </script>
+      <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=285666991037771&ev=PageView&noscript=1"
+      /></noscript>
+      
+    <!-- Meta Pixel Code -->
 <script>
   !function(f,b,e,v,n,t,s)
   {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -101,6 +116,7 @@
   src="https://www.facebook.com/tr?id=1097645271437998&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
+
 </head>
 
 <body>
@@ -155,6 +171,9 @@
               <a class="nav-link" href="#agenda-container">Program</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="DJs.html">DJs</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
             <li class="nav-item">
@@ -175,14 +194,14 @@
   <div class="hero-box">
       <div class="hero-video-box">
           <div class="hero-video d-none d-md-block">
-              <video height="270" width="480"  autoplay="" muted="" disablepictureinpicture="" disableremoteplayback="" loop="" playsinline="">&gt;
+              <video poster="images/hintergrund.webp" height="270" width="480"  autoplay="" muted="" disablepictureinpicture="" disableremoteplayback="" loop="" playsinline="">&gt;
                   <source src="images/hero5.mp4">
                   <source src="images/hero5.mp4">
                   <p class="warning">Your browser does not support HTML5 video.</p>
               </video>
           </div>
           <div class="hero-video d-md-none">
-              <video height="270" width="480" poster="" autoplay="" muted="" disablepictureinpicture="" disableremoteplayback="" loop="" playsinline="">&gt;
+              <video height="270" width="480" poster="images/hintergrund.webp" autoplay="" muted="" disablepictureinpicture="" disableremoteplayback="" loop="" playsinline="">&gt;
                 <source src="images/hero5.mp4">
                 <source src="images/hero5.mp4">
                   <p class="warning">Your browser does not support HTML5 video.</p>
@@ -194,11 +213,11 @@
       </div>
       <div class="hero-info">
           <div class="hero-list">
-            <ul>
-              <li style="font-family: 'Manrope', cursive;"><i class="icofont-star"></i><strong> LONGEST BACHATA SOCIAL IN</strong> GERMANY</li>
-              <li style="font-family: 'Manrope', cursive;"><i class="icofont-star"></i><strong> DANCE ALL DAY</strong> ALL NIGHT</li>
-              <li style="font-family: 'Manrope', cursive;"><i class="icofont-star"></i><strong> NATIONAL & INTERNATIONAL</strong> ARTISTS</li>
-          </ul>
+              <ul>
+                  <li style="font-family: 'Manrope', cursive;"><i class="icofont-star"></i><strong> LONGEST BACHATA SOCIAL IN</strong> GERMANY</li>
+                  <li style="font-family: 'Manrope', cursive;"><i class="icofont-star"></i><strong> DANCE ALL DAY</strong> ALL NIGHT</li>
+                  <li style="font-family: 'Manrope', cursive;"><i class="icofont-star"></i><strong> NATIONAL & INTERNATIONAL</strong> ARTISTS</li>
+              </ul>
           </div>
           <div class="hero-button">
               <a href="#pricing_container"  class="button button-radius button-border button-gradient-bg">BUY NOW</a>
@@ -268,81 +287,94 @@
   <div class="page_wrapper">
 
 <!-- ARTISTS Section Start -->
-<section class="our_value_section home_page row_am">
-  <div class="our_value_innner">
-    <div class="container">
-      <div class="section_title" data-aos="fade-up" data-aos-duration="1500">
-        <span class="title_badge">DJS</span>
-        <h2><span>BACHATA </span>DJS</h2>
-      </div>
-      <!-- Value Slider Start -->
-      <div class="value_slider" data-aos="fade-in" data-aos-duration="1500">
-        <div class="owl-carousel owl-theme" id="value_slider">
-          <div class="item">
-            <div class="value_block">
-              <div class="icon">
-                <img src="images/DIMENSIONS.jpg" alt="image">
-              </div>
-              <div class="text">
-                <h3>DJ Dimen5ions</h3>
-                <p>UK
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="value_block">
-              <div class="icon">
-                <img src="images/JOSH website.jpg" alt="image">
-              </div>
-              <div class="text">
-                <h3>DJ Josh</h3>
-                <p>Mexico
-                </p>
+    
+  <section class="our_value_section home_page row_am">
+    <div class="our_value_innner">
+      <div class="container">
+        <div class="section_title" data-aos="fade-up" data-aos-duration="1500">
+          <span class="title_badge">ARTISTS</span>
+          <h2><span>BACHATA </span>ARTISTS</h2>
+        </div>
+        <!-- Value Slider Start -->
+        <div class="value_slider" data-aos="fade-in" data-aos-duration="1500">
+          <div class="owl-carousel owl-theme" id="value_slider">
+            <div class="item">
+              <div class="value_block">
+                <div class="icon">
+                  <img src="images/E&N website.jpg" alt="image">
+                </div>
+                <div class="text">
+                  <h3>Eduardo & Natalia</h3>
+                  <p>Mexico
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="item">
-            <div class="value_block">
-              <div class="icon">
-                <img src="images/Roberto.jpg" alt="image">
-              </div>
-              <div class="text">
-                <h3>DJ Roberto</h3>
-                <p>Germany
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="value_block">
-              <div class="icon">
-                <img src="images/Edu.jpg" alt="image">
-              </div>
-              <div class="text">
-                <h3>DJ Fusion</h3>
-                <p>Mexico
-                </p>
+            <div class="item">
+              <div class="value_block">
+                <div class="icon">
+                  <img src="images/A&Y website.jpg" alt="image">
+                </div>
+                <div class="text">
+                  <h3>Andres & Yessica</h3>
+                  <p>Spain
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="item">
-            <div class="value_block">
-              <div class="icon">
-                <img src="images/For website PAPITO.jpg" alt="image">
+            <div class="item">
+              <div class="value_block">
+                <div class="icon">
+                  <img src="images/R&M.jpg" alt="image">
+                </div>
+                <div class="text">
+                  <h3>Roberto & Magdalena</h3>
+                  <p>Mexico
+                  </p>
+                </div>
               </div>
-              <div class="text">
-                <h3>DJ Papito</h3>
-                <p>Spain
-                </p>
+            </div>
+            <div class="item">
+              <div class="value_block">
+                <div class="icon">
+                  <img src="images/D&I.jpg" alt="image">
+                </div>
+                <div class="text">
+                  <h3>David & Ilona</h3>
+                  <p>Spain
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="value_block">
+                <div class="icon">
+                  <img src="images/G&A website.jpg" alt="image">
+                </div>
+                <div class="text">
+                  <h3>Guillermo & Anastasia</h3>
+                  <p>Mexico
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="value_block">
+                <div class="icon">
+                  <img src="images/DavidJessy.jpg" alt="image">
+                </div>
+                <div class="text">
+                  <h3>David & Jessy</h3>
+                  <p>Spain 
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <!-- Value Slider End -->
       </div>
-      <!-- Value Slider End -->
     </div>
-  </div>
 </section>
 <!-- ARTISTS Section End -->
  
@@ -566,41 +598,94 @@
     </section>
     <!-- Pricing-Section end -->
 
+<!-- ARTISTS Section Start -->
+<section class="our_value_section home_page row_am">
+  <div class="our_value_innner">
+    <div class="container">
+      <div class="section_title" data-aos="fade-up" data-aos-duration="1500">
+        <span class="title_badge">DJS</span>
+        <h2><span>BACHATA </span>DJS</h2>
+        <br>
+        <a href="DJs.html" class="btn puprple_btn ml-0">See DJS</a>
+      </div>
+      <!-- Value Slider Start -->
+      <!-- Value Slider End -->
+    </div>
+  </div>
+</section>
+<!-- ARTISTS Section End -->
 
 
 <!-- AGENDA Section Start -->
-        <section id="agenda-container" class="how_it_section">
-          <div class="how_it_inner" data-aos="fade-in" data-aos-duration="1500">
-            <div class="container">
-              <div class="section_title" data-aos="fade-up" data-aos-duration="1500">
-                <span class="title_badge">Agenda Overview</span>
-                <h2>Party and Social Schedule</h2>
+<section id="agenda-container" class="how_it_section">
+  <div class="how_it_inner" data-aos="fade-in" data-aos-duration="1500">
+    <div class="container">
+      <div class="section_title" data-aos="fade-up" data-aos-duration="1500">
+        <span class="title_badge">Agenda Overview</span>
+        <h2>Weekend Program</h2>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="steps_block step_border" data-aos="fade-up" data-aos-duration="1500">
+            <div class="steps">
+              <div class="icon">
+                <img src="images/schedule.webp" alt="image">
               </div>
-              <div class="row">
-                <div class="col">
-                  <div class="steps_block step_border" data-aos="fade-up" data-aos-duration="1500">
-                    <div class="steps">
-                      <div class="icon">
-                        <img src="images/djs.webp" alt="image">
-                      </div>
-                      <div class="text">
-                        <h3>Join us!!!</h3>
-                        <p></p>
-                        <p></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="text-center">
-                <div class="btn_block">
-                  <a href="#pricing_container" class="btn puprple_btn ml-0">BUY NOW</a>
-                  <div clTailorass="btn_bottom"></div>
-                </div>
+              <div class="text">
+                <h3>Join us!!!</h3>
+                <p>&#9552;&#9552;&#9733; Bachata Artists&#9733;&#9552;&#9552;</p><p>
+                  Andres &amp; Yessica</p><p>
+                  Sergio &amp; Beige</p><p>
+                  Roberto &amp; Magdalena</p><p>
+                  David &amp; Ilona</p><p>
+                  Chris &amp; Noor</p><p>
+                  Guillermo &amp; Anastasia</p><p>
+                  Denis &amp; Mariana</p><p>
+                  Eduardo &amp; Natalia</p><p>
+                  David &amp; Jessy</p><p>
+                  Marcus Paulo</p><p>
+                  Bebars</p><p>
+                  </p><p>
+                  &#9552;&#9552;&#9733; DJs&#9733;&#9552;&#9552;</p><p>
+                  DJ Dimensions</p><p>
+                  DJ Papito</p><p>
+                  DJ Josh</p><p>
+                  DJ Roberto</p><p>
+                  DJ Fusion</p><p>
+                  DJ Edu</p><p>
+                  </p><p>
+                  &#9552;&#9552;&#9733; Show Teams&#9733;&#9552;&#9552;</p><p>
+                  Sabor a Bachata</p><p>
+                  Grupo Esencia</p><p>
+                  Alma Dance Show Team</p><p>
+                  Grove Dance Girls</p><p>
+                  &#9552;&#9552;&#9733; Location &#9733;&#9552;&#9552;</p><p>
+                  The event is taking place in the most beautiful and biggest dance school in Hesse, the Tanzschule Weiss. The main party will take place at a &#11088;&#65039; 500 m2 area!!!&#11088;&#65039;</p><p>
+                  There will be additional room for classes and socials.</p>
+                  
+                  <p>&#9552;&#9552;&#9733; Party Prices&#9733;&#9552;&#9552;</p><p>
+                  Friday party:</p><p>
+                  15 EUR without Workshops / 20 EUR with Workshops</p><p>
+                  Saturday party:</p><p>
+                  20 EUR without Workshops / 25 EUR with Workshops</p><p>
+                  Sunday party:</p><p>
+                  5 EUR</p><p>
+                  ** JacknJill Competition included in Full,Party &amp; Marathonpass otherwise participation costs 15 EUR</p>
+              
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
+      <div class="text-center">
+        <div class="btn_block">
+          <a href="#pricing_container" class="btn puprple_btn ml-0">BUY NOW</a>
+          <div clTailorass="btn_bottom"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- AGENDA Section End -->  
 
 
@@ -665,248 +750,249 @@
   <!-- container end -->
 </section>
 <!-- PROGRAM FOTOS-Section end -->
-    <!-- FAQ Tab Section Start -->
-    <section class="row_am faq_section" id="faqsec">
-      <div class="container">
-        <div class="section_title" data-aos="fade-up" data-aos-duration="1500">
-          <span class="title_badge">Question & Answer</span>
-          <h2><span>FAQs</span> - Frequently Asked Questions</h2>
-        </div>
-        <div class="faq_blocks" data-aos="fade-up" data-aos-duration="1500">
-          <div class="accordion" id="accordionExample">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <h2 class="mb-0">
-                      <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
-                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Where is the festival venue located?
-                        <span class="icons">
-                          <i class="icofont-plus"></i>
-                          <i class="icofont-minus"></i>
-                        </span>
-                      </button>
-                    </h2>
+       <!-- FAQ Tab Section Start -->
+       <section class="row_am faq_section" id="faqsec">
+        <div class="container">
+          <div class="section_title" data-aos="fade-up" data-aos-duration="1500">
+            <span class="title_badge">Question & Answer</span>
+            <h2><span>FAQs</span> - Frequently Asked Questions</h2>
+          </div>
+          <div class="faq_blocks" data-aos="fade-up" data-aos-duration="1500">
+            <div class="accordion" id="accordionExample">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+                          data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Where is the festival venue located?
+                          <span class="icons">
+                            <i class="icofont-plus"></i>
+                            <i class="icofont-minus"></i>
+                          </span>
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                      data-parent="#accordionExample">
+                      <div class="card-body">
+                        <p>The festival will take place in Tanzschule Weiss in Offenbach - the biggest dance school in Hessen!</p>
+                        <p>Address: Christian-Pleß-Straße 11-13, 63069 Offenbach am Main</p>
+                      </div>
+                    </div>
                   </div>
-                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                    data-parent="#accordionExample">
-                    <div class="card-body">
-                      <p>The festival will take place in Tanzschule Weiss in Offenbach - the biggest dance school in Hessen!</p>
-                      <p>Address: Christian-Pleß-Straße 11-13, 63069 Offenbach am Main</p>
+                  <div class="card">
+                    <div class="card-header" id="headingTwo">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                          data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          When is the Frankfurt Bachata Marathon taking place?
+                          <span class="icons">
+                            <i class="icofont-plus"></i>
+                            <i class="icofont-minus"></i>
+                          </span>
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <p>The Frankfurt Bachata Marathon will take place from 19th to 22th April</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header" id="headingThree">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                          data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          How much do the Tickets cost?
+                          <span class="icons">
+                            <i class="icofont-plus"></i>
+                            <i class="icofont-minus"></i>
+                          </span>
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                      data-parent="#accordionExample">
+                      <div class="card-body">
+                        <p>Click on the Button "BUY NOW" and all you will get all price details</p>
+  
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header" id="headingfour">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                          data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+                          What is a Bachata Marathon?
+                          <span class="icons">
+                            <i class="icofont-plus"></i>
+                            <i class="icofont-minus"></i>
+                          </span>
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <p>During a Bachata Marathon there are Socials all Days and Nights, Workshops, Shows, Competitions and much more. It is a 3-day celebration of passion, rhythm, and pure joy at the Frankfurt Bachata Marathon!</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header" id="headingnine">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                          data-target="#collapsenine" aria-expanded="false" aria-controls="collapsenine">
+                          Are there any accommodation options available near the festival venue?                       <span class="icons">
+                            <i class="icofont-plus"></i>
+                            <i class="icofont-minus"></i>
+                          </span>
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapsenine" class="collapse" aria-labelledby="headingnine" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <p>Yes, there are several accommodation options available in close proximity to the festival venue. We recommend booking early to secure your preferred choice.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="card">
-                  <div class="card-header" id="headingTwo">
-                    <h2 class="mb-0">
-                      <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        When is the Frankfurt Bachata Marathon taking place?
-                        <span class="icons">
-                          <i class="icofont-plus"></i>
-                          <i class="icofont-minus"></i>
-                        </span>
-                      </button>
-                    </h2>
-                  </div>
-                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                    <div class="card-body">
-                      <p>The Frankfurt Bachata Marathon will take place from 19th to 22th April</p>
+                <div class="col-md-6">
+                  <div class="card">
+                    <div class="card-header" id="headingfive">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                          data-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
+                          What is included in the Full Pass Ticket?
+                          <span class="icons">
+                            <i class="icofont-plus"></i>
+                            <i class="icofont-minus"></i>
+                          </span>
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapsefive" class="collapse" aria-labelledby="headingfive" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <p>The Fullpass Ticket grants you access to all festival activities except the especial bootcamps, including workshops, performances, parties, and the live concert.</p>
+  
+                      </div>
+                    </div>
+                   </div>
+                  <div class="card">
+                    <div class="card-header" id="headingsix">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                          data-target="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
+                          What is included in the Party Pass Ticket?
+                          <span class="icons">
+                            <i class="icofont-plus"></i>
+                            <i class="icofont-minus"></i>
+                          </span>
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapsesix" class="collapse" aria-labelledby="headingsix" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <p>The Partypass Ticket grants you access to all festival parties and the live concert.</p>
+  
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="card">
-                  <div class="card-header" id="headingThree">
-                    <h2 class="mb-0">
-                      <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        How much do the Tickets cost?
-                        <span class="icons">
-                          <i class="icofont-plus"></i>
-                          <i class="icofont-minus"></i>
-                        </span>
-                      </button>
-                    </h2>
-                  </div>
-                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
-                    data-parent="#accordionExample">
-                    <div class="card-body">
-                      <p>Click on the Button "BUY NOW" and all you will get all price details</p>
-
+                  <div class="card">
+                    <div class="card-header" id="headingseven">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                          data-target="#collapseseven" aria-expanded="false" aria-controls="collapseseven">
+                          Are there any Day Pass Tickets?
+                          <span class="icons">
+                            <i class="icofont-plus"></i>
+                            <i class="icofont-minus"></i>
+                          </span>
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapseseven" class="collapse" aria-labelledby="headingseven"
+                      data-parent="#accordionExample">
+                      <div class="card-body">
+                        <p>There will be day pass tickets. They grant you access to all festival activities during one day; except the especial bootcamps. </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="card">
-                  <div class="card-header" id="headingfour">
-                    <h2 class="mb-0">
-                      <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
-                        What is a Bachata Marathon?
-                        <span class="icons">
-                          <i class="icofont-plus"></i>
-                          <i class="icofont-minus"></i>
-                        </span>
-                      </button>
-                    </h2>
-                  </div>
-                  <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordionExample">
-                    <div class="card-body">
-                      <p>During a Bachata Marathon there are Socials all Days and Nights, Workshops, Shows, Competitions and much more. It is a 3-day celebration of passion, rhythm, and pure joy at the Frankfurt Bachata Marathon!</p>
+                  <div class="card">
+                    <div class="card-header" id="headingeight">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                          data-target="#collapseeight" aria-expanded="false" aria-controls="collapseeight">
+                          Is there a dress code for the festival?
+                          <span class="icons">
+                            <i class="icofont-plus"></i>
+                            <i class="icofont-minus"></i>
+                          </span>
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapseeight" class="collapse" aria-labelledby="headingeight"
+                      data-parent="#accordionExample">
+                      <div class="card-body">
+                        <p>There is no specific dress code during the day, but for the parties we will have amazing mottos, so make sure you dress up.</p>
+  
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="card">
-                  <div class="card-header" id="headingnine">
-                    <h2 class="mb-0">
-                      <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapsenine" aria-expanded="false" aria-controls="collapsenine">
-                        Are there any accommodation options available near the festival venue?                       <span class="icons">
-                          <i class="icofont-plus"></i>
-                          <i class="icofont-minus"></i>
-                        </span>
-                      </button>
-                    </h2>
-                  </div>
-                  <div id="collapsenine" class="collapse" aria-labelledby="headingnine" data-parent="#accordionExample">
-                    <div class="card-body">
-                      <p>Yes, there are several accommodation options available in close proximity to the festival venue. We recommend booking early to secure your preferred choice.</p>
+                  <div class="card">
+                    <div class="card-header" id="headingten">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                          data-target="#collapseten" aria-expanded="false" aria-controls="collapseten">
+                          Can I participate in the dance competition?                        <span class="icons">
+                            <i class="icofont-plus"></i>
+                            <i class="icofont-minus"></i>
+                          </span>
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapseten" class="collapse" aria-labelledby="headingten" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <p>Absolutely! Anyone can participate. Just register &amp; showcase your Bachata skills.</p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="card">
-                  <div class="card-header" id="headingfive">
-                    <h2 class="mb-0">
-                      <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
-                        What is included in the Full Pass Ticket?
-                        <span class="icons">
-                          <i class="icofont-plus"></i>
-                          <i class="icofont-minus"></i>
-                        </span>
-                      </button>
-                    </h2>
-                  </div>
-                  <div id="collapsefive" class="collapse" aria-labelledby="headingfive" data-parent="#accordionExample">
-                    <div class="card-body">
-                      <p>The Fullpass Ticket grants you access to all festival activities except the especial bootcamps, including workshops, performances, parties, and the live concert.</p>
-
+                  <div class="card">
+                    <div class="card-header" id="headingeleven">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                          data-target="#collapseeleven" aria-expanded="false" aria-controls="headingeleven">
+                          Can I get a refund if I am unable to attend the festival                   <span class="icons">
+                            <i class="icofont-plus"></i>
+                            <i class="icofont-minus"></i>
+                          </span>
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapseeleven" class="collapse" aria-labelledby="collapseeleven" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <p>You can change your Ticket Name for an small fee of 15 EUR or get a Ticket for the next Event.</p>                    </div>
                     </div>
                   </div>
-                 </div>
-                <div class="card">
-                  <div class="card-header" id="headingsix">
-                    <h2 class="mb-0">
-                      <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
-                        What is included in the Party Pass Ticket?
-                        <span class="icons">
-                          <i class="icofont-plus"></i>
-                          <i class="icofont-minus"></i>
-                        </span>
-                      </button>
-                    </h2>
-                  </div>
-                  <div id="collapsesix" class="collapse" aria-labelledby="headingsix" data-parent="#accordionExample">
-                    <div class="card-body">
-                      <p>The Partypass Ticket grants you access to all festival parties and the live concert.</p>
-
+                  <div class="card">
+                    <div class="card-header" id="headingtwelve">
+                      <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
+                          data-target="#collapsetwelve" aria-expanded="false" aria-controls="headingtwelve">
+                          Is there parking available at the festival venue?                    <span class="icons">
+                            <i class="icofont-plus"></i>
+                            <i class="icofont-minus"></i>
+                          </span>
+                        </button>
+                      </h2>
                     </div>
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="card-header" id="headingseven">
-                    <h2 class="mb-0">
-                      <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapseseven" aria-expanded="false" aria-controls="collapseseven">
-                        Are there any Day Pass Tickets?
-                        <span class="icons">
-                          <i class="icofont-plus"></i>
-                          <i class="icofont-minus"></i>
-                        </span>
-                      </button>
-                    </h2>
-                  </div>
-                  <div id="collapseseven" class="collapse" aria-labelledby="headingseven"
-                    data-parent="#accordionExample">
-                    <div class="card-body">
-                      <p>There will be day pass tickets. They grant you access to all festival activities during one day; except the especial bootcamps. </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="card-header" id="headingeight">
-                    <h2 class="mb-0">
-                      <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapseeight" aria-expanded="false" aria-controls="collapseeight">
-                        Is there a dress code for the festival?
-                        <span class="icons">
-                          <i class="icofont-plus"></i>
-                          <i class="icofont-minus"></i>
-                        </span>
-                      </button>
-                    </h2>
-                  </div>
-                  <div id="collapseeight" class="collapse" aria-labelledby="headingeight"
-                    data-parent="#accordionExample">
-                    <div class="card-body">
-                      <p>There is no specific dress code during the day, but for the parties we will have amazing mottos, so make sure you dress up.</p>
-
-                    </div>
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="card-header" id="headingten">
-                    <h2 class="mb-0">
-                      <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapseten" aria-expanded="false" aria-controls="collapseten">
-                        Can I participate in the dance competition?                        <span class="icons">
-                          <i class="icofont-plus"></i>
-                          <i class="icofont-minus"></i>
-                        </span>
-                      </button>
-                    </h2>
-                  </div>
-                  <div id="collapseten" class="collapse" aria-labelledby="headingten" data-parent="#accordionExample">
-                    <div class="card-body">
-                      <p>Absolutely! Anyone can participate. Just register &amp; showcase your Bachata skills.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="card-header" id="headingeleven">
-                    <h2 class="mb-0">
-                      <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapseeleven" aria-expanded="false" aria-controls="headingeleven">
-                        Can I get a refund if I am unable to attend the festival                   <span class="icons">
-                          <i class="icofont-plus"></i>
-                          <i class="icofont-minus"></i>
-                        </span>
-                      </button>
-                    </h2>
-                  </div>
-                  <div id="collapseeleven" class="collapse" aria-labelledby="collapseeleven" data-parent="#accordionExample">
-                    <div class="card-body">
-                      <p>You can change your Ticket Name for an small fee of 15 EUR or get a Ticket for the next Event.</p>                    </div>
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="card-header" id="headingtwelve">
-                    <h2 class="mb-0">
-                      <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse"
-                        data-target="#collapsetwelve" aria-expanded="false" aria-controls="headingtwelve">
-                        Is there parking available at the festival venue?                    <span class="icons">
-                          <i class="icofont-plus"></i>
-                          <i class="icofont-minus"></i>
-                        </span>
-                      </button>
-                    </h2>
-                  </div>
-                  <div id="collapsetwelve" class="collapse" aria-labelledby="collapsetwelve" data-parent="#accordionExample">
-                    <div class="card-body">
-                      <p>Yes, there is parking available near the festival venue. You can park on the streets, parking garage or in front of REWE supermarket close to the venue</p>
+                    <div id="collapsetwelve" class="collapse" aria-labelledby="collapsetwelve" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <p>Yes, there is parking available near the festival venue. You can park on the streets, parking garage or in front of REWE supermarket close to the venue</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -914,9 +1000,8 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <!-- FAQ Tab Section End -->
+      </section>
+      <!-- FAQ Tab Section End -->
     <!-- GOOGLE MAP Section Start -->
     <section id="agenda-container" class="how_it_section">
       <div class="how_it_inner" data-aos="fade-in" data-aos-duration="1500">
@@ -989,9 +1074,9 @@ You can also take the S-Bahn S1/S9 from the city centre (Hauptwache or Konstable
                 <li><a href="tel: ">+49 163 9641730</a></li>
               </ul>
               <ul class="social_media">
-                <li><a href="https://www.facebook.com/FrankfurtBachataFestival"><i class="icofont-facebook"></i></a></li>
+                <li><a href="https://fb.me/e/53RGwDtLd"><i class="icofont-facebook"></i></a></li>
                 <li><a href="https://www.youtube.com/@almadancebachatasalsa9317"><i class="icofont-youtube"></i></a></li>
-                <li><a href="https://www.instagram.com/frankfurt_bachata_festival/"><i class="icofont-instagram"></i></a></li>
+                <li><a href="https://www.instagram.com/frankfurt_bachata_marathon/"><i class="icofont-instagram"></i></a></li>
               </ul>
             </div>
           </div>
@@ -1107,6 +1192,10 @@ You can also take the S-Bahn S1/S9 from the city centre (Hauptwache or Konstable
     });
 
   </script>
+  <link rel="stylesheet" href="cookie-banner.css">
+  <div id="consent_data"></div>
+  <script src="consent3.js"></script>
+  
 
 </body>
 
