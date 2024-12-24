@@ -1,28 +1,17 @@
 /* Theming */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"); /* import font */
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"); import font */
 
-/* -----------Css-variable------ */
 
-:root {
-    --light-yellow: #eef2fe;
-    --primery: #000000;
-    --dark-black: #000000;
-    --dark-greay: #9599ab;
-    --greay: #afafaf;
-    --text-greay: #848484;
-    --black: #000000;
-    --bg-white: #ffffff;
-    --text-white: #fff;
-    --red-color: #ff0000;
+#dance-partner-container {
+    padding: 20px;
+
+    max-width: 70%;
+    text-align: left;
+    align-items: baseline;
 }
 
-
 .hero-box {
-    position: relative;
-    background: rgb(36,13,0);
-    background: var(--primery);
-    background-size: 300% 300%;
-  	animation: AnimateBG 7s ease infinite;
+    position: relative
 }
 .hero-video-box {
     position: relative;
@@ -44,10 +33,10 @@
 }
 .hero-video-box:after {
     content: "";
-    background: #84309a00;
-    background: -moz-linear-gradient(top, #84309a00 0%, #84309a00 100%);
-    background: -webkit-linear-gradient(top, #84309a00 0%, #84309a00 100%);
-    background: linear-gradient(to bottom, #84309a00 0%, #84309a00 100%);
+    background: #84309a;
+    background: -moz-linear-gradient(top, #84309a00 0%, #84309a 100%);
+    background: -webkit-linear-gradient(top, #84309a00 0%, #84309a 100%);
+    background: linear-gradient(to bottom, #84309a00 0%, #84309a 100%);
     width: 100%;
     height: 50%;
     position: absolute;
@@ -78,7 +67,7 @@
     margin-top: -350px;
     margin-bottom: 0px;
     position: relative;
-   
+    
 }
 
 
@@ -334,16 +323,11 @@ label {
     padding: 8px 22px;
     margin: 0 0 1px 0;
     cursor: pointer;
-    background: #000000;
     border-radius: 3px;
-    color: #FFF;
     transition: ease .5s;
 }
 
 
-label:hover {
-    background: #84309a;
-}
 
 .content {
     background: #ffffff;

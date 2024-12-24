@@ -1,7 +1,7 @@
 :root {
     --light-yellow: #eef2fe;
-    --primery: #000000;
-    --dark-black: #000000;
+    --primery: #84309a;
+    --dark-black: #84309a;
     --dark-greay: #9599ab;
     --black: #000000;
     --text-white: #ffffff;
@@ -211,7 +211,7 @@
 
     .banner_section {
         text-align: center;
-        padding-top: 90px;
+        padding-top: 30px;
     }
 
     .banner_section .app_btn,
@@ -347,7 +347,7 @@
 
     .banner_section .banner_text {
     	margin-top: 0;
-    	padding: 0 50px;
+    	padding: 0 20px;
     }
 
     .banner_section .banner_text h1 {
@@ -356,7 +356,7 @@
 
 
     .banner_section .banner_slider {
-        margin-top: 40px;
+        margin-top: 20px;
     }
 
     .banner_section .banner_slider .left_icon {

@@ -1,17 +1,30 @@
-/* -----------Css-variable------ */
+ /* @media screen and (max-width:1799px) {
+    .hero-info {
+        margin-top: 0;
+        margin-bottom: 0px;
+        background-color: #84309a;
+    }
+}  */
 
-:root {
-    --light-yellow: #eef2fe;
-    --primery: #000000;
-    --dark-black: #000000;
-    --dark-greay: #9599ab;
-    --greay: #afafaf;
-    --text-greay: #848484;
-    --black: #000000;
-    --bg-white: #ffffff;
-    --text-white: #fff;
-    --red-color: #ff0000;
-}
+/* @media screen and (max-width:1200px) {
+    .button {
+        padding: 12px 32px;
+        font-size: 13px
+    }
+    .hero-logo img {
+        max-width: 200px
+    }
+    .hero-info {
+        margin-top: -30px;
+        background-color: #84309a;
+    }
+
+    .hero-list ul li {
+        font-size: 12px;
+        margin: 12px 0
+    }
+
+} */
 
 
 @media screen and (max-width:935px) {
@@ -26,16 +39,8 @@
      .hero-info {
         margin-top: 0;
         margin-bottom: 0px;
-        background: --primery;
-        background-size: 300% 300%;
-        animation: AnimateBG 15s ease infinite;
+        background-color: #84309a;
 
-}
-.hero-list {
-    margin: 0 15px 10px 15px;
-    background: #38373d6e;
-    border: 1px solid #304563;
-    	}
 } 
 
 
@@ -61,20 +66,16 @@
         height: auto
     }
     .hero-list ul li {
-        font-size: 10px
+        font-size: 14px
     }
     .hero-info {
         margin-top: 0;
         margin-bottom: 0px;
-        background: --primery;
-        background-size: 300% 300%;
-        animation: AnimateBG 15s ease infinite;
+        background-color: #84309a;
 
     }
     .hero-list {
-        margin: 0 15px 10px 15px;
-        background: #38373d6e;
-        border: 1px solid #304563;
+        margin: 0 15px 10px 15px
     }
     .hero-box {
         padding-top: 0
