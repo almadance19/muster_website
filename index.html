@@ -40,6 +40,169 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Arizonia&family=Baloo+2&family=Roboto:ital@1&display=swap" rel="stylesheet">
 
+  <style>
+    .sebas-garreta-highlight {
+        background-color: white;
+        border: 3px solid #84309a;
+        border-radius: 10px;
+        padding: 0;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 5px 15px rgba(132, 48, 154, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+    }
+    
+    .highlight-container {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .highlight-image-container {
+        width: 40%;
+        position: relative;
+    }
+    
+    .highlight-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    
+    .highlight-content-wrapper {
+        width: 60%;
+        padding: 25px;
+    }
+    
+    .highlight-header {
+        margin-bottom: 20px;
+        position: relative;
+    }
+    
+    .highlight-tag {
+        background-color: #84309a;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        display: inline-block;
+    }
+    
+    .highlight-title {
+        color: #84309a;
+        font-size: 32px;
+        margin: 10px 0 5px;
+    }
+    
+    .highlight-description {
+        color: #333;
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+    
+    .highlight-details {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+    }
+    
+    .detail-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .detail-icon {
+        font-size: 20px;
+    }
+    
+    .detail-text {
+        color: #555;
+        font-size: 16px;
+    }
+    
+    .cta-button {
+        background-color: #84309a;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    
+    .cta-button:hover {
+        background-color: #6a2580;
+        transform: scale(1.05);
+    }
+    
+    /* Animation for the highlight */
+    @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(132, 48, 154, 0.4); }
+        70% { box-shadow: 0 0 0 10px rgba(132, 48, 154, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(132, 48, 154, 0); }
+    }
+    
+    .fbf-event-highlight {
+        animation: pulse 2s infinite;
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .highlight-container {
+            flex-direction: column;
+        }
+        
+        .highlight-image-container {
+            width: 100%;
+            height: 300px;
+        }
+        
+        .highlight-content-wrapper {
+            width: 100%;
+            padding: 20px;
+        }
+        
+        .highlight-title {
+            font-size: 28px;
+        }
+        
+        .highlight-description {
+            font-size: 16px;
+        }
+        
+        .highlight-details {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .highlight-image-container {
+            height: 250px;
+        }
+        
+        .highlight-title {
+            font-size: 24px;
+        }
+        
+        .highlight-tag {
+            font-size: 12px;
+        }
+        
+        .cta-button {
+            padding: 10px 25px;
+            font-size: 14px;
+        }
+    }
+</style>
+
   <!-- Markup Schema Google Data -->
   <script type="application/ld+json">
     {
@@ -290,8 +453,97 @@
   <!-- Page Wraper -->
   <div class="page_wrapper">
 
+    <section class="our_value_section home_page row_am">
+      <div class="our_value_innner">
+        <div class="container">
+          <div class="section_title" data-aos="fade-up" data-aos-duration="1500">
+            <span class="title_badge">ARTISTS</span>
+            <h2><span>BACHATA </span>ARTISTS</h2>
+          </div>
+          <div class="value_slider" data-aos="fade-in" data-aos-duration="1500">
+            <div class="owl-carousel owl-theme value-slider">
+              <div class="item">
+                <div class="value_block">
+                  <div class="icon">
+                    <img src="images/antoni-belen.webp" alt="image">
+                  </div>
+                  <div class="text">
+                    <h3>Antoni & Belen</h3>
+                    <p>Spain / Argentina</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="value_block">
+                  <div class="icon">
+                    <img src="images/andres-yessica.webp" alt="image">
+                  </div>
+                  <div class="text">
+                    <h3>Andres & Yessica</h3>
+                    <p>Spain / Colombia</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="value_block">
+                  <div class="icon">
+                    <img src="images/anita-varea.webp" alt="image">
+                  </div>
+                  <div class="text">
+                    <h3>Anita & Varea</h3>
+                    <p>Spain</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="value_block">
+                  <div class="icon">
+                    <img src="images/edu-virginia.webp" alt="image">
+                  </div>
+                  <div class="text">
+                    <h3>Edu & Virginia</h3>
+                    <p>Spain</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
- 
+  <section class="sebas-garreta-highlight fbf-event-highlight">
+    <div class="highlight-container">
+        <div class="highlight-image-container">
+            <img src="images/sebas-garreta.webp" 
+                 alt="Sebas Garreta performing live" 
+                 class="highlight-image">
+        </div>
+        <div class="highlight-content-wrapper">
+            <div class="highlight-header">
+                <span class="highlight-tag">Live Concert</span>
+                <h2 class="highlight-title">Sebas Garreta</h2>
+            </div>
+            <div class="highlight-content">
+                <p class="highlight-description">Experience the electrifying performance of the world-famous bachata singer at Frankfurt Bachata Festival.</p>
+                <div class="highlight-details">
+                    <div class="detail-item">
+                        <span class="detail-icon">📅</span>
+                        <span class="detail-text">21-22 November 2025</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">📍</span>
+                        <span class="detail-text">Frankfurt, Germany</span>
+                    </div>
+                </div>
+            </div>
+            <div class="highlight-cta">
+                <a href="#pricing_container" class="cta-button">Get Tickets</a>
+            </div>
+        </div>
+    </div>
+</section>
+
     <!-- Pricing-Section -->
     <section class="row_am pricing_section white_text" data-aos="fade-in" data-aos-duration="1500">
       <div id="pricing_container" class="pricing_inner">
@@ -510,110 +762,136 @@
     </section>
     <!-- Pricing-Section end -->
 
-<!-- ARTISTS Section Start -->
-
-<!-- <section class="our_value_section home_page row_am">
-  <div class="our_value_innner">
-    <div class="container">
-      <div class="section_title" data-aos="fade-up" data-aos-duration="1500">
-        <span class="title_badge">ARTISTS</span>
-        <h2><span>BACHATA </span>ARTISTS</h2>
+    <section class="our_value_section home_page row_am ">
+      <div class="our_value_innner">
+        <div class="container">
+          <div class="section_title" data-aos="fade-up" data-aos-duration="1500">
+            <span class="title_badge">DJS</span>
+            <h2><span>BACHATA </span>DJS</h2>
+          </div>
+          <div class="value_slider" data-aos="fade-in" data-aos-duration="1500">
+            <div class="owl-carousel owl-theme value-slider">
+              <div class="item">
+                <div class="value_block">
+                  <div class="icon">
+                    <img src="images/20.webp" alt="image">
+                  </div>
+                  <div class="text">
+                    <h3>DJ Lima</h3>
+                    <p>Spain / Peru</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="value_block">
+                  <div class="icon">
+                    <img src="images/21.webp" alt="image">
+                  </div>
+                  <div class="text">
+                    <h3>DJ La Passion</h3>
+                    <p>Germany / Iran</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="value_block">
+                  <div class="icon">
+                    <img src="images/17.webp" alt="image">
+                  </div>
+                  <div class="text">
+                    <h3>DJ Josh</h3>
+                    <p>Spain</p>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="value_block">
+                  <div class="icon">
+                    <img src="images/19.webp" alt="image">
+                  </div>
+                  <div class="text">
+                    <h3>DJ Roberto</h3>
+                    <p>Bolivia / Germany</p>
+                  </div>
+                </div>
+              </div>
+              <!-- <div class="item">
+                <div class="value_block">
+                  <div class="icon">
+                    <img src="images/18.webp" alt="image">
+                  </div>
+                  <div class="text">
+                    <h3>DJ Milad</h3>
+                    <p>Iran / Germany</p>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="value_slider" data-aos="fade-in" data-aos-duration="1500">
-        <div class="owl-carousel owl-theme" id="value_slider">
-          <div class="item">
-            <div class="value_block">
-              <div class="icon">
-                <img src="images/E&N website.jpg" alt="image">
-              </div>
-              <div class="text">
-                <h3>Eduardo & Natalia</h3>
-                <p>Mexico
-                </p>
-              </div>
-            </div>
+    </section>
+
+
+    <section class="our_value_section home_page row_am ">
+      <div class="our_value_innner">
+        <div class="container">
+          <div class="section_title" data-aos="fade-up" data-aos-duration="1500">
+            <span class="title_badge">DJS</span>
+            <h2><span>MANY MORE BACHATA </span>ARTISTS COMING ..</h2>
           </div>
-          <div class="item">
-            <div class="value_block">
-              <div class="icon">
-                <img src="images/A&Y website.jpg" alt="image">
+          <div class="value_slider" data-aos="fade-in" data-aos-duration="1500">
+            <div class="owl-carousel owl-theme value-slider">
+              <div class="item">
+                <div class="value_block">
+                  <div class="icon">
+                    <img src="images/eduardo-natalia.webp" alt="image">
+                  </div>
+                  <div class="text">
+                    <h3>Eduardo & Natalia</h3>
+                    <p>Mexico / Slovakia</p>
+                  </div>
+                </div>
               </div>
-              <div class="text">
-                <h3>Andres & Yessica</h3>
-                <p>Spain
-                </p>
+              <div class="item">
+                <div class="value_block">
+                  <div class="icon">
+                    <img src="images/daniel-anastasia.webp" alt="image">
+                  </div>
+                  <div class="text">
+                    <h3>Daniel & Anastasia</h3>
+                    <p>Germany / Russia</p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="value_block">
-              <div class="icon">
-                <img src="images/R&M.jpg" alt="image">
+              <div class="item">
+                <div class="value_block">
+                  <div class="icon">
+                    <img src="images/david-ilona.webp" alt="image">
+                  </div>
+                  <div class="text">
+                    <h3>David & Ilona</h3>
+                    <p>Spain / Germany</p>
+                  </div>
+                </div>
               </div>
-              <div class="text">
-                <h3>Roberto & Magdalena</h3>
-                <p>Mexico
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="value_block">
-              <div class="icon">
-                <img src="images/D&I.jpg" alt="image">
-              </div>
-              <div class="text">
-                <h3>David & Ilona</h3>
-                <p>Spain
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="value_block">
-              <div class="icon">
-                <img src="images/G&A website.jpg" alt="image">
-              </div>
-              <div class="text">
-                <h3>Guillermo & Anastasia</h3>
-                <p>Mexico
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="item">
-            <div class="value_block">
-              <div class="icon">
-                <img src="images/DavidJessy.jpg" alt="image">
-              </div>
-              <div class="text">
-                <h3>David & Jessy</h3>
-                <p>Spain 
-                </p>
+              <div class="item">
+                <div class="value_block">
+                  <div class="icon">
+                    <img src="images/david-jessy.webp" alt="image">
+                  </div>
+                  <div class="text">
+                    <h3>David & Jessy</h3>
+                    <p>Germany</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section> -->
-<!-- ARTISTS Section End -->
+    </section>
 
-<!-- ARTISTS Section Start -->
-<!-- <section class="our_value_section home_page row_am">
-  <div class="our_value_innner">
-    <div class="container">
-      <div class="section_title" data-aos="fade-up" data-aos-duration="1500">
-        <span class="title_badge">DJS</span>
-        <h2><span>BACHATA </span>DJS</h2>
-        <br>
-        <a href="DJs.html" class="btn puprple_btn ml-0">See DJS</a>
-      </div>
-    </div>
-  </div>
-</section> -->
-<!-- ARTISTS Section End -->
 
 
 <!-- AGENDA Section Start -->
@@ -1176,9 +1454,25 @@ You can also take the S-Bahn S1/S9 from the city centre (Hauptwache or Konstable
       cardBlock.forEach((card) => {
         card.style.top = `${topStyle}px`;
         topStyle += 30;
-      })
+      });
+
+      $(".value-slider").each(function(){
+      $(this).owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        autoplay: true,
+        responsive: {
+          0: { items: 1 },
+          600: { items: 2 },
+          1000: { items: 3 }
+        }
+      });
+    });
 
     }
+
+
     );
 
     // Scroll Down Window 
