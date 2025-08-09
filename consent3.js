@@ -3,7 +3,7 @@ const cookieItem = 'CookiesPolicy';
 
 
 const style = document.createElement('style');
-style.textContent = `#cookies {
+style.textContent = `#cookies-popup {
   position: fixed;
   bottom: 10px;
   left: 50%;
@@ -20,29 +20,29 @@ style.textContent = `#cookies {
   animation: fadeIn 0.3s ease-in-out;
 }
 
-.consent_container p {
+.consent-container p {
   margin: 0 0 4px 0;
   font-size: 12px;
   line-height: 1.25;
 }
 
-.consent_container a {
+.consent-container a {
   color: #0030c0;
   text-decoration: underline;
 }
 
-.row {
+.consent-row {
   display: flex;
   justify-content: space-between;
   gap: 6px;
 }
 
-.col-consent {
+.consent-col {
   flex: 1;
   text-align: center;
 }
 
-.btn-consent {
+.consent-btn {
   padding: 6px 8px;
   border: none;
   border-radius: 6px;
@@ -53,25 +53,25 @@ style.textContent = `#cookies {
   width: 100%;
 }
 
-.btn-accept {
+.consent-btn-accept {
   background-color: #0030c0;
   color: #fff;
 }
 
-.btn-accept:hover {
+.consent-btn-accept:hover {
   background-color: #0020a0;
 }
 
-.btn-essential {
+.consent-btn-essential {
   background-color: #555;
   color: #fff;
 }
 
-.btn-essential:hover {
+.consent-btn-essential:hover {
   background-color: #333;
 }
 
-.info {
+.consent-info {
   font-size: 10px;
   color: #777;
   margin-top: 2px;
@@ -83,10 +83,10 @@ style.textContent = `#cookies {
 }
 
 @media (max-width: 480px) {
-  #cookies {
+  #cookies-popup {
     padding: 6px 8px;
   }
-  .btn-consent {
+  .consent-btn {
     font-size: 10px;
     padding: 5px 6px;
   }
@@ -115,18 +115,18 @@ if (consent === 'true') {
 
 function showConsentPopup() {
   const popupHTML = `
-  <div id="cookies">
-    <div class="consent_container">
+  <div id="cookies-popup">
+    <div class="consent-container">
       <p>
         Wir nutzen Cookies für Funktionen & Analyse. 
         <a href="https://alma-dance.de/privacy-policy" target="_blank">Details</a>
       </p>
-      <div class="row">
-        <div class="col-consent">
-          <button class="btn-consent btn-accept" onclick="acceptAllCookies()">Alle akzeptieren</button>
+      <div class="consent-row">
+        <div class="consent-col">
+          <button class="consent-btn consent-btn-accept" onclick="acceptAllCookies()">Alle akzeptieren</button>
         </div>
-        <div class="col-consent">
-          <button class="btn-consent btn-essential" onclick="acceptEssentialCookies()">Nur nötig</button>
+        <div class="consent-col">
+          <button class="consent-btn consent-btn-essential" onclick="acceptEssentialCookies()">Nur nötig</button>
         </div>
       </div>
     </div>
@@ -164,7 +164,7 @@ function denyAllCookies() {
 }
 
 function removeConsentPopup() {
-  const popup = document.getElementById("cookies");
+  const popup = document.getElementById("cookies-popup");
   if (popup) popup.remove();
 }
 
