@@ -1,0 +1,94 @@
+/* Cookie Consent Styling */
+#cookies {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  color: #333;
+  border-radius: 8px;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.15);
+  padding: 10px 14px;
+  max-width: 420px;
+  width: 95%;
+  font-family: sans-serif;
+  z-index: 9999;
+  animation: fadeIn 0.4s ease-in-out;
+  
+  /* Smaller height */
+  max-height: 11vh;
+  overflow-y: auto;
+}
+
+.consent_container p {
+  margin: 3px 0;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.col-consent {
+  flex: 1;
+  text-align: center;
+}
+
+.btn-consent {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+}
+
+.btn-accept {
+  background-color: #0030c0;
+  color: #fff;
+}
+
+.btn-accept:hover {
+  background-color: #0020a0;
+}
+
+.btn-essential {
+  background-color: #555;
+  color: #fff;
+}
+
+.btn-essential:hover {
+  background-color: #333;
+}
+
+.info {
+  font-size: 10px;
+  color: #777;
+  margin-top: 2px;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translate(-50%, 10px);}
+  to {opacity: 1; transform: translate(-50%, 0);}
+}
+
+/* On very small screens keep buttons side by side */
+@media (max-width: 480px) {
+  #cookies {
+    max-width: 95%;
+    padding: 8px 12px;
+  }
+  .row {
+    flex-direction: row;
+  }
+  .btn-consent {
+    font-size: 11px;
+    padding: 5px 8px;
+  }
+}

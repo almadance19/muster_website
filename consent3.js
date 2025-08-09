@@ -1,152 +1,194 @@
-const storageItem = 'mapsConsent' 
-const cookieItem = 'CookiesPolicy' 
+const storageItem = 'mapsConsent';
+const cookieItem = 'CookiesPolicy';
 
-//Different Policies
-//let consent = localStorage.getItem(storageItem)
-//let consent_type = localStorage.getItem("CookiesPolicy")
 
+const style = document.createElement('style');
+style.textContent = `#cookies {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  color: #333;
+  border-radius: 8px;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.15);
+  padding: 8px 12px;
+  max-width: 400px;
+  width: 95%;
+  font-family: sans-serif;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.consent_container p {
+  margin: 0 0 4px 0;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+.consent_container a {
+  color: #0030c0;
+  text-decoration: underline;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.col-consent {
+  flex: 1;
+  text-align: center;
+}
+
+.btn-consent {
+  padding: 6px 8px;
+  border: none;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+}
+
+.btn-accept {
+  background-color: #0030c0;
+  color: #fff;
+}
+
+.btn-accept:hover {
+  background-color: #0020a0;
+}
+
+.btn-essential {
+  background-color: #555;
+  color: #fff;
+}
+
+.btn-essential:hover {
+  background-color: #333;
+}
+
+.info {
+  font-size: 10px;
+  color: #777;
+  margin-top: 2px;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translate(-50%, 10px);}
+  to {opacity: 1; transform: translate(-50%, 0);}
+}
+
+@media (max-width: 480px) {
+  #cookies {
+    padding: 6px 8px;
+  }
+  .btn-consent {
+    font-size: 10px;
+    padding: 5px 6px;
+  }
+}
+`;
+
+document.head.appendChild(style);
+
+// Read consent from cookies
 let consent_type = getCookie(cookieItem);
 let consent = getCookie(storageItem);
 
-
-if (consent == 'true') { 
-
-  if (consent_type=="ALL") {
-    var script_2 = document.createElement('script');
-    script_2.type = 'text/javascript';
-    script_2.src ='FacebookPixel.js'
-  
-
-    document.head.appendChild(script_2);
-  
+if (consent === 'true') {
+  if (consent_type === "ALL") {
+    loadScript('FacebookPixel.js');
     console.log("ALL CONSENT GIVEN");
-  } else if (consent_type=="ONLY") {
+  } else if (consent_type === "ONLY") {
     console.log("CONSENT GIVEN");
-  } else if (consent_type=="NOT") {
+  } else if (consent_type === "NOT") {
     console.log("NO CONSENT GIVEN");
-    $(".popup-youtube").removeAttr( "data-target" ).removeAttr( "data-url" ).removeAttr( "data-toggle" );
+    $(".popup-youtube").removeAttr("data-target data-url data-toggle");
   }
-
 } else {
-
-  console.log("PREP CONSENT");
-  var displayTable = '<div id="cookies">';
-        displayTable += '<div class="consent_container">';
-            displayTable += '<div class="subcontainer">';
-                displayTable += '<div class="cookies">';
-                    displayTable += '<p>Wir verwenden Cookies auf unserer Website</p>';
-                    displayTable += "<p> "+ "Einige von ihnen sind essenziell, während andere uns helfen, diese Website und Ihre Erfahrung zu verbessern. Für mehr Infos " ;
-                   displayTable += "<Strong><a href=\"https://alma-dance.de/privacy-policy\">unsere Datenschutzerklärung</a></Strong>"+ " prüfen. </p>";
-                    displayTable += '<form >';
-                    displayTable += "<div class=\"row\">";
-                    displayTable += '<div class="form-group col-md col-consent">';
-                    displayTable += "<input type=\"button\" value=\"Alle Cookies akzeptieren\" id=\"allCookies\" class=\"btn btn-dark\" style=\"background-color: rgb(0, 3, 192);\" ";
-                    displayTable += " onclick=\"acceptAllCookies()\" />";
-                    displayTable += "<p class=\"info\"> "+ "Optimales Nutzererlebnis garantiert." + "</p>";
-                    displayTable += '</div>';
-                    displayTable += '<div class="form-group col-md col-consent">';
-                    displayTable += "<input type=\"button\" value=\"Nur essentielle Cookies\" id=\"onlyEsential\" class=\"btn btn-dark\" style=\"background-color: rgb(0, 3, 192);\" ";
-                    displayTable += " onclick=\"acceptEsentialCookies()\" />";
-                    displayTable += "<p class=\"info\"> "+ "Alle wichtigen Funktionen sind enthalten." + "</p>";
-                    displayTable += '</div>';
-                    
-                    // displayTable += '<div class="form-group col-md col-consent">';
-                    // displayTable += "<input type=\"button\" value=\"Alle Cookies ablehnen\" id=\"denyCookies\" class=\"btn btn-dark\" style=\"background-color: rgb(0, 3, 192);\" ";
-                    // displayTable += " onclick=\"denyAllCookies()\" />";
-                    // displayTable += "<p class=\"info\" > "+ "**Keine Anzeige von Inhalten aus Youtube, Facebook, Instagram und Google möglich." + "</p>";
-                    // displayTable += '</div>';
-                  
-                    displayTable += "</div>";
-                    displayTable += "</form>";
-                displayTable += '</div>';
-            displayTable += '</div>';
-        displayTable += '</div>';
-    displayTable += '</div>';
-
-
-    document.getElementById("consent_data").innerHTML = displayTable;
-    console.log(displayTable);
-
+  showConsentPopup();
 }
 
-function acceptAllCookies(){
+function showConsentPopup() {
+  const popupHTML = `
+  <div id="cookies">
+    <div class="consent_container">
+      <p>
+        Wir nutzen Cookies für Funktionen & Analyse. 
+        <a href="https://alma-dance.de/privacy-policy" target="_blank">Details</a>
+      </p>
+      <div class="row">
+        <div class="col-consent">
+          <button class="btn-consent btn-accept" onclick="acceptAllCookies()">Alle akzeptieren</button>
+        </div>
+        <div class="col-consent">
+          <button class="btn-consent btn-essential" onclick="acceptEssentialCookies()">Nur nötig</button>
+        </div>
+      </div>
+    </div>
+  </div>`;
+  
+  document.getElementById("consent_data").innerHTML = popupHTML;
+}
+
+function saveConsent(policy) {
+  localStorage.setItem(storageItem, true);
+  localStorage.setItem("CookiesPolicy", policy);
+  setCookie("mapsConsent", "true", 30);
+  setCookie("CookiesPolicy", policy, 30);
+}
+
+function acceptAllCookies() {
   console.log("ALL CONSENT GIVEN");
-  localStorage.setItem(storageItem, true)
-  localStorage.setItem("CookiesPolicy", "ALL");
-  localStorage.setItem("FAGSkripted", true);
-
-  // document.cookie = "mapsConsent=true";
-  // document.cookie = "CookiesPolicy=ALL";
-  // document.cookie ="FAGSkripted=true";
-
-  setCookie("mapsConsent", "true", 30);
-  setCookie("CookiesPolicy", "ALL", 30);
-  setCookie("FAGSkripted", "true", 30);
-
-  var script_2 = document.createElement('script');
-  script_2.type = 'text/javascript';
-  script_2.src ='FacebookPixel.js'
-  var script_3 = document.createElement('script');
-  script_3.type = 'text/javascript';
-  script_3.src ='googleTag.js'
-
-  document.head.appendChild(script_3);
-  document.head.appendChild(script_2);
-
-  document.getElementById("cookies").innerHTML = "";
+  saveConsent("ALL");
+  loadScript("FacebookPixel.js");
+  loadScript("googleTag.js");
+  removeConsentPopup();
 }
 
-function acceptEsentialCookies(){
+function acceptEssentialCookies() {
   console.log("CONSENT GIVEN");
-
-  localStorage.setItem(storageItem, true)
-  localStorage.setItem("CookiesPolicy", "ONLY");
-
-  // document.cookie = "mapsConsent=true";
-  // document.cookie = "CookiesPolicy=ONLY";
-
-  setCookie("mapsConsent", "true", 30);
-  setCookie("CookiesPolicy", "ONLY", 30);
-
-
-  document.getElementById("cookies").innerHTML = "";
+  saveConsent("ONLY");
+  removeConsentPopup();
 }
 
-function denyAllCookies(){
+function denyAllCookies() {
   console.log("NO CONSENT GIVEN");
-
-  $(".popup-youtube").removeAttr( "data-target" ).removeAttr( "data-url" ).removeAttr( "data-toggle" );
-
-  localStorage.setItem(storageItem, true)
-  localStorage.setItem("CookiesPolicy", "NOT");
-
-  // document.cookie = "mapsConsent=true";
-  // document.cookie = "CookiesPolicy=NOT";
-
-  setCookie("mapsConsent", "true", 30);
-  setCookie("CookiesPolicy", "NOT", 30);
-
-  document.getElementById("cookies").innerHTML = "";
+  $(".popup-youtube").removeAttr("data-target data-url data-toggle");
+  saveConsent("NOT");
+  removeConsentPopup();
 }
 
+function removeConsentPopup() {
+  const popup = document.getElementById("cookies");
+  if (popup) popup.remove();
+}
 
-// Set a Cookie
+function loadScript(src) {
+  const script = document.createElement('script');
+  script.src = src;
+  script.async = true;
+  document.head.appendChild(script);
+}
+
+// Cookie helpers
 function setCookie(cName, cValue, expDays) {
   let date = new Date();
   date.setTime(date.getTime() + (expDays * 24 * 60 * 60 * 1000));
   const expires = "expires=" + date.toUTCString();
-  document.cookie = cName + "=" + cValue + "; samesite=strict  ; " + expires + "; path=/";
+  document.cookie = `${cName}=${cValue}; samesite=strict; ${expires}; path=/`;
 }
 
 function getCookie(cname) {
   let name = cname + "=";
   let ca = document.cookie.split(';');
-  for(let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
+  for (let c of ca) {
+    c = c.trim();
+    if (c.indexOf(name) === 0) {
       return c.substring(name.length, c.length);
     }
   }
