@@ -299,14 +299,13 @@ src="https://www.facebook.com/tr?id=989911359104150&ev=PageView&noscript=1"
   /></noscript>
   <!-- End Meta Pixel Code -->
 
-  <script>
+<script>
 window.addEventListener('DOMContentLoaded', async () => {
   await fetch('https://www.bachata-salsa-online.eu/api/meta', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ eventName: 'PageView' })
   });
-  console.log('PageView event sent to Meta CAPI');
 });
 </script>
    
