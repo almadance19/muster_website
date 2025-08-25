@@ -201,6 +201,22 @@
             font-size: 14px;
         }
     }
+
+      .video-container-carrusel {
+    position: relative;
+    width: 100%;
+    max-width: 400px; /* vertical video size */
+    margin: 0 auto;
+    padding-top: 177.77%; /* 9:16 aspect ratio */
+  }
+  .video-container-carrusel iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+  }
 </style>
 
   <!-- Markup Schema Google Data -->
@@ -325,6 +341,7 @@ src="https://www.facebook.com/tr?id=989911359104150&ev=PageView&noscript=1"
     });
   });
 </script>
+
    
 </head>
 
@@ -565,6 +582,30 @@ src="https://www.facebook.com/tr?id=989911359104150&ev=PageView&noscript=1"
         </div>
     </div>
 </section>
+  <section id="promo-video-section" class="how_it_section">
+  <div class="how_it_inner" data-aos="fade-in" data-aos-duration="1500">
+    <div class="container">
+      <div class="section_title" data-aos="fade-up" data-aos-duration="1500">
+        <span class="title_badge"></span>
+        <h2>Frankfurt Bachata Festival Live Concert</h2>
+        <br>
+      </div>
+      <div class="video-placeholder" style="text-align: center; margin-top: 20px;">
+        <iframe width="100%" max-width="400px" height="700px" src="https://www.youtube.com/embed/Pv4VcIQqh-E" 
+                title="Frankfurt Bachata Festival Highlights" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+      </div>
+      <div class="text-center mt-4">
+        <div class="btn_block">
+          <a href="#pricing_container" class="btn purple_btn ml-0">Join the Next Edition</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Pricing-Section -->
     <section class="row_am pricing_section white_text" data-aos="fade-in" data-aos-duration="1500">
@@ -762,7 +803,7 @@ src="https://www.facebook.com/tr?id=989911359104150&ev=PageView&noscript=1"
     </section>
 
 
-  <!-- <section id="promo-video-section" class="how_it_section">
+  <section id="promo-video-section" class="how_it_section">
   <div class="how_it_inner" data-aos="fade-in" data-aos-duration="1500">
     <div class="container">
       <div class="section_title" data-aos="fade-up" data-aos-duration="1500">
@@ -775,7 +816,7 @@ src="https://www.facebook.com/tr?id=989911359104150&ev=PageView&noscript=1"
         </p>
       </div>
       <div class="video-placeholder" style="text-align: center; margin-top: 20px;">
-        <iframe width="100%" max-width="400px" height="700px" src="https://www.youtube.com/embed/VIDEO_ID" 
+        <iframe width="100%" max-width="400px" height="700px" src="https://www.youtube.com/embed/HKynAYh7DgM" 
                 title="Frankfurt Bachata Festival Highlights" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -789,7 +830,7 @@ src="https://www.facebook.com/tr?id=989911359104150&ev=PageView&noscript=1"
       </div>
     </div>
   </div>
-</section> -->
+</section>
 
 
     <section class="our_value_section home_page row_am ">
@@ -1447,7 +1488,6 @@ You can also take the S-Bahn S1/S9 from the city centre (Hauptwache or Konstable
   <link rel="stylesheet" href="cookie-banner.css">
   <div id="consent_data"></div>
   <script src="consent3.js"></script>
-  
 
 </body>
 
