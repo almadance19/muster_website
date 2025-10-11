@@ -217,6 +217,151 @@
     height: 100%;
     border-radius: 12px;
   }
+
+
+            /* Reset only for our agenda section */
+        .fbf-agenda-section * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .fbf-agenda-section {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fbf-agenda-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .fbf-agenda-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #84309a 0%, #c155e0 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .fbf-agenda-title {
+            font-size: 2.5rem;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .fbf-agenda-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .fbf-agenda-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .fbf-agenda-day {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .fbf-agenda-day:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .fbf-day-header {
+            padding: 20px;
+            background: linear-gradient(135deg, #84309a 0%, #c155e0 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .fbf-day-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .fbf-day-date {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .fbf-day-content {
+            padding: 25px;
+        }
+
+        .fbf-event-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .fbf-event-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .fbf-event-time {
+            font-weight: 600;
+            color: #84309a;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        .fbf-event-title {
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .fbf-event-description {
+            color: #666;
+            fontSize: 0.95rem;
+        }
+
+        .fbf-highlight-event {
+            background-color: #f8f0fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #84309a;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 992px) {
+            .fbf-agenda-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fbf-agenda-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .fbf-agenda-title {
+                font-size: 2rem;
+            }
+        }
+
 </style>
 
   <!-- Markup Schema Google Data -->
@@ -614,7 +759,7 @@ src="https://www.facebook.com/tr?id=989911359104150&ev=PageView&noscript=1"
         <div class="container">
             <div class="section_title" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
                 <span class="title_badge">Pricing</span>
-                <h2>TICKET PRICE RISING SOON!</h2>
+                <h2>Get Your Tickets Now </h2>
             </div>
 
             <ul class="nav nav-tabs" id="myTab" role="tablist" data-aos="fade-up" data-aos-duration="1500">
@@ -890,7 +1035,7 @@ src="https://www.facebook.com/tr?id=989911359104150&ev=PageView&noscript=1"
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <!-- <div class="col-md-4">
                                 <div class="pannel_block" data-aos="fade-up" data-aos-duration="1500">
                                     <div class="heading">
                                         <h3>Sunday Pass</h3>
@@ -913,7 +1058,7 @@ src="https://www.facebook.com/tr?id=989911359104150&ev=PageView&noscript=1"
                                         <div class="btn_bottom"></div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -929,7 +1074,101 @@ src="https://www.facebook.com/tr?id=989911359104150&ev=PageView&noscript=1"
       </div>
     </section>
 
-
+     <!-- Agenda-Section -->
+ <section class="fbf-agenda-section">
+        <div class="fbf-agenda-header">
+            <span class="fbf-agenda-tag">Festival Agenda</span>
+            <h2 class="fbf-agenda-title">Event Schedule</h2>
+            <p class="fbf-agenda-subtitle">Join us for four days of workshops, parties, and unforgettable experiences at the Frankfurt Bachata Festival</p>
+        </div>
+        
+        <div class="fbf-agenda-container">
+            <!-- Thursday -->
+            <div class="fbf-agenda-day">
+                <div class="fbf-day-header">
+                    <h3 class="fbf-day-name">Thursday</h3>
+                    <p class="fbf-day-date">20th November</p>
+                </div>
+                <div class="fbf-day-content">
+                    <div class="fbf-event-item">
+                        <div class="fbf-event-time">20:00 - 22:00</div>
+                        <h4 class="fbf-event-title">Workshops</h4>
+                        <p class="fbf-event-description">Kick off the festival with our opening workshops</p>
+                    </div>
+                    <div class="fbf-event-item">
+                        <div class="fbf-event-time">22:00 - Late</div>
+                        <h4 class="fbf-event-title">Opening Party</h4>
+                        <p class="fbf-event-description">Salsa & Bachata social dancing to get the party started</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Friday -->
+            <div class="fbf-agenda-day">
+                <div class="fbf-day-header">
+                    <h3 class="fbf-day-name">Friday</h3>
+                    <p class="fbf-day-date">21st November</p>
+                </div>
+                <div class="fbf-day-content">
+                    <div class="fbf-event-item">
+                        <div class="fbf-event-time">18:00 - 22:00</div>
+                        <h4 class="fbf-event-title">Workshops</h4>
+                        <p class="fbf-event-description">Improve your skills with our expert instructors</p>
+                    </div>
+                    <div class="fbf-event-item">
+                        <div class="fbf-event-time">22:00 - 04:00</div>
+                        <h4 class="fbf-event-title">Party Night</h4>
+                        <p class="fbf-event-description">Dance the night away with our international DJs</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Saturday -->
+            <div class="fbf-agenda-day">
+                <div class="fbf-day-header">
+                    <h3 class="fbf-day-name">Saturday</h3>
+                    <p class="fbf-day-date">22nd November</p>
+                </div>
+                <div class="fbf-day-content">
+                    <div class="fbf-event-item">
+                        <div class="fbf-event-time">12:00 - 19:00</div>
+                        <h4 class="fbf-event-title">Workshops</h4>
+                        <p class="fbf-event-description">Full day of workshops for all levels</p>
+                    </div>
+                    <div class="fbf-event-item">
+                        <div class="fbf-event-time">19:00 - 22:00</div>
+                        <h4 class="fbf-event-title">Social Dancing Competition</h4>
+                        <p class="fbf-event-description">Show off your skills and win amazing prizes</p>
+                    </div>
+                    <div class="fbf-event-item fbf-highlight-event">
+                        <div class="fbf-event-time">22:00 - 04:00</div>
+                        <h4 class="fbf-event-title">Sebas Garreta Live Concert</h4>
+                        <p class="fbf-event-description">Experience the electrifying performance of the world-famous bachata singer</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sunday -->
+            <!-- <div class="fbf-agenda-day">
+                <div class="fbf-day-header">
+                    <h3 class="fbf-day-name">Sunday</h3>
+                    <p class="fbf-day-date">23rd November</p>
+                </div>
+                <div class="fbf-day-content">
+                    <div class="fbf-event-item">
+                        <div class="fbf-event-time">13:00 - 19:00</div>
+                        <h4 class="fbf-event-title">Workshops</h4>
+                        <p class="fbf-event-description">Final day of workshops to perfect your technique</p>
+                    </div>
+                    <div class="fbf-event-item">
+                        <div class="fbf-event-time">19:00 - 21:00</div>
+                        <h4 class="fbf-event-title">Farewell Social</h4>
+                        <p class="fbf-event-description">One last dance with all the festival participants</p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
 
     <section class="our_value_section home_page row_am ">
       <div class="our_value_innner">
@@ -1030,6 +1269,7 @@ src="https://www.facebook.com/tr?id=989911359104150&ev=PageView&noscript=1"
     </div>
   </div>
 </section>
+
 
 
     <section class="our_value_section home_page row_am ">
