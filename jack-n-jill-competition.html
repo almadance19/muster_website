@@ -81,7 +81,409 @@
       object-fit: cover; /* Ensures the image covers the area without distortion */
       margin: 0 auto; /* Centers the image */
     }
+    /* Foto Album */
+       .highlight_album {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+  }
+
+  .flickr-wrapper {
+    width: 100%;
+    max-width: 900px; /* Adjust as you like */
+    position: relative;
+  }
+
+  .flickr-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  @media (max-width: 768px) {
+    .flickr-wrapper {
+      max-width: 100%;
+      padding: 0 1rem;
+    }
+    }
   </style>
+    <!-- icofont-css-link -->
+  <link rel="stylesheet" href="css/icofont.min.css">
+  <!-- Owl-Carosal-Style-link -->
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <!-- Bootstrap-Style-link -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Aos-Style-link -->
+  <link rel="stylesheet" href="css/aos.css">
+  <!-- Coustome-Style-link -->
+  <link rel="stylesheet" href="css/style.css">
+    <!-- Coustome-Style-link 2 -->
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/custom-media.css">
+
+  <!-- Responsive-Style-link -->
+  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arizonia&family=Baloo+2&family=Roboto:ital@1&display=swap" rel="stylesheet">
+
+  <style>
+    .sebas-garreta-highlight {
+        background-color: white;
+        border: 3px solid #84309a;
+        border-radius: 10px;
+        padding: 0;
+        max-width: 800px;
+        margin: 20px auto;
+        box-shadow: 0 5px 15px rgba(132, 48, 154, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+    }
+    
+    .highlight-container {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .highlight-image-container {
+        width: 40%;
+        position: relative;
+    }
+    
+    .highlight-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    
+    .highlight-content-wrapper {
+        width: 60%;
+        padding: 25px;
+    }
+    
+    .highlight-header {
+        margin-bottom: 20px;
+        position: relative;
+    }
+    
+    .highlight-tag {
+        background-color: #84309a;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        display: inline-block;
+    }
+    
+    .highlight-title {
+        color: #84309a;
+        font-size: 32px;
+        margin: 10px 0 5px;
+    }
+    
+    .highlight-description {
+        color: #333;
+        font-size: 18px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+    }
+    
+    .highlight-details {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+    }
+    
+    .detail-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .detail-icon {
+        font-size: 20px;
+    }
+    
+    .detail-text {
+        color: #555;
+        font-size: 16px;
+    }
+    
+    .cta-button {
+        background-color: #84309a;
+        color: white;
+        padding: 12px 30px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    
+    .cta-button:hover {
+        background-color: #6a2580;
+        transform: scale(1.05);
+    }
+    
+    /* Animation for the highlight */
+    @keyframes pulse {
+        0% { box-shadow: 0 0 0 0 rgba(132, 48, 154, 0.4); }
+        70% { box-shadow: 0 0 0 10px rgba(132, 48, 154, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(132, 48, 154, 0); }
+    }
+    
+    .fbf-event-highlight {
+        animation: pulse 2s infinite;
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .highlight-container {
+            flex-direction: column;
+        }
+        
+        .highlight-image-container {
+            width: 100%;
+            height: 300px;
+        }
+        
+        .highlight-content-wrapper {
+            width: 100%;
+            padding: 20px;
+        }
+        
+        .highlight-title {
+            font-size: 28px;
+        }
+        
+        .highlight-description {
+            font-size: 16px;
+        }
+        
+        .highlight-details {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .highlight-image-container {
+            height: 250px;
+        }
+        
+        .highlight-title {
+            font-size: 24px;
+        }
+        
+        .highlight-tag {
+            font-size: 12px;
+        }
+        
+        .cta-button {
+            padding: 10px 25px;
+            font-size: 14px;
+        }
+    }
+
+      .video-container-carrusel {
+    position: relative;
+    width: 100%;
+    max-width: 400px; /* vertical video size */
+    margin: 0 auto;
+    padding-top: 177.77%; /* 9:16 aspect ratio */
+  }
+  .video-container-carrusel iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+  }
+
+
+            /* Reset only for our agenda section */
+        .fbf-agenda-section * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .fbf-agenda-section {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fbf-agenda-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .fbf-agenda-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #84309a 0%, #c155e0 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .fbf-agenda-title {
+            font-size: 2.5rem;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .fbf-agenda-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .fbf-agenda-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .fbf-agenda-day {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .fbf-agenda-day:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .fbf-day-header {
+            padding: 20px;
+            background: linear-gradient(135deg, #84309a 0%, #c155e0 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .fbf-day-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .fbf-day-date {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .fbf-day-content {
+            padding: 25px;
+        }
+
+        .fbf-event-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .fbf-event-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .fbf-event-time {
+            font-weight: 600;
+            color: #84309a;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        .fbf-event-title {
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .fbf-event-description {
+            color: #666;
+            fontSize: 0.95rem;
+        }
+
+        .fbf-highlight-event {
+            background-color: #f8f0fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #84309a;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 992px) {
+            .fbf-agenda-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fbf-agenda-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .fbf-agenda-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Foto Album */
+       .highlight_album {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+  }
+
+  .flickr-wrapper {
+    width: 100%;
+    max-width: 900px; /* Adjust as you like */
+    position: relative;
+  }
+
+  .flickr-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  @media (max-width: 768px) {
+    .flickr-wrapper {
+      max-width: 100%;
+      padding: 0 1rem;
+    }
+  }
+
+</style>
+  
 </head>
 <body>
 
@@ -216,16 +618,38 @@
 </div>
 </section>
 
-  <section class="container my-5">
-    <h2 class="text-center mb-4">Participate in this incredible experience!</h2>
-    <!-- Photo Carousel -->
-    <div class="carousel my-4">
-        <div><img src="https://lan27nbio8.ufs.sh/f/0dhEbmpq2JyrrmFFnU7bQpmtguUyY5xDJSkMlc7ROaVEnBqW" alt="Photo 1"></div>
-        <div><img src="https://lan27nbio8.ufs.sh/f/0dhEbmpq2JyrKZ9P2X3SkigdxvqohXB8R4mIAc5sMaTywH0b" alt="Photo 2"></div>
-        <div><img src="https://lan27nbio8.ufs.sh/f/0dhEbmpq2JyruxDllM1w8gIpbF6Nund4XMH23hq57x1YEROi" alt="Photo 3"></div>
-        <div><img src="https://lan27nbio8.ufs.sh/f/0dhEbmpq2JyrLHIgE0ouhx8c314lPUpTzC50HMqSBomOaQZn" alt="Photo 4"></div>
-      </div>
+<section >
+  <!-- container start -->
+  <div class="section_title" >
+    <span class="title_badge">Highlights</span>
+    <h2>Frankfurt Bachata Festival <span>Highlights</span></h2>
+    <h4>
+      Get swept away by the most enchanting Bachata music spun by renowned DJs,
+      ensuring non-stop dancing euphoria from dusk till dawn.
+    </h4>
+  </div>
 
+  <!-- screen slider start -->
+
+  <!-- screen slider end -->
+
+  <!-- embedded album -->
+<div class="highlight_album" >
+  <div class="flickr-wrapper">
+    <a data-flickr-embed="true" data-header="true" data-footer="true"  href="https://www.flickr.com/photos/203742516@N08" title="">
+      <img src="https://live.staticflickr.com/65535/54851801655_4a4c71ea65_h.jpg" alt="Flickr Album">
+    </a>
+  </div>
+  <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+</div>
+<div class="highlight_album" data-aos="fade-up" data-aos-duration="1500">
+  <div class="flickr-wrapper">
+<h2>Frankfurt Bachata Festival Photo Album</h2>
+</div>
+</div>
+
+  <!-- end album -->
+  <!-- container end -->
   </section>
     <!-- Footer -->
     <footer >
