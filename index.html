@@ -363,16 +363,31 @@
         }
 
         /* Foto Album */
-          .highlight_album {
+       .highlight_album {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 3rem;
   }
-  .highlight_album iframe {
-    max-width: 100%;
+
+  .flickr-wrapper {
+    width: 100%;
+    max-width: 900px; /* Adjust as you like */
+    position: relative;
+  }
+
+  .flickr-wrapper img {
+    width: 100%;
+    height: auto;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  @media (max-width: 768px) {
+    .flickr-wrapper {
+      max-width: 100%;
+      padding: 0 1rem;
+    }
   }
 
 </style>
@@ -1543,11 +1558,14 @@ src="https://www.facebook.com/tr?id=989911359104150&ev=PageView&noscript=1"
   <!-- screen slider end -->
 
   <!-- embedded album -->
-  <div class="highlight_album" data-aos="fade-up" data-aos-duration="1500">
-
-    <blockquote class="imgur-embed-pub" lang="en" data-id="a/OAvuUZR"  ><a href="//imgur.com/a/OAvuUZR">Frankfurt Bachata Festival Friday Hightlights</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
-
+<div class="highlight_album" data-aos="fade-up" data-aos-duration="1500">
+  <div class="flickr-wrapper">
+    <a data-flickr-embed="true" href="https://www.flickr.com/photos/203742516@N08" title="">
+      <img src="https://live.staticflickr.com/65535/54851801655_4a4c71ea65_h.jpg" alt="Flickr Album">
+    </a>
   </div>
+  <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+</div>
   <!-- end album -->
   <!-- container end -->
 </section>
