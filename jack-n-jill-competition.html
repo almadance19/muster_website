@@ -108,6 +108,149 @@
       padding: 0 1rem;
     }
     }
+
+      /* Reset only for our agenda section */
+        .fbf-agenda-section * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .fbf-agenda-section {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fbf-agenda-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .fbf-agenda-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #84309a 0%, #c155e0 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .fbf-agenda-title {
+            font-size: 2.5rem;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .fbf-agenda-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .fbf-agenda-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .fbf-agenda-day {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .fbf-agenda-day:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .fbf-day-header {
+            padding: 20px;
+            background: linear-gradient(135deg, #84309a 0%, #c155e0 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .fbf-day-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .fbf-day-date {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .fbf-day-content {
+            padding: 25px;
+        }
+
+        .fbf-event-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .fbf-event-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .fbf-event-time {
+            font-weight: 600;
+            color: #84309a;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        .fbf-event-title {
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        .fbf-event-description {
+            color: #666;
+            fontSize: 0.95rem;
+        }
+
+        .fbf-highlight-event {
+            background-color: #f8f0fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #84309a;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 992px) {
+            .fbf-agenda-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .fbf-agenda-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .fbf-agenda-title {
+                font-size: 2rem;
+            }
+        }
   </style>
     <!-- icofont-css-link -->
   <link rel="stylesheet" href="css/icofont.min.css">
