@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frankfurt Bachata Festival - Schedule</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Festival header styles */
+        .festival-header {
+            background: linear-gradient(135deg, #440069, #9220a9);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .festival-title {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        a {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .festival-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        /* Carousel container styles */
+        .schedule-carousel-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .carousel-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #440069;
+            font-size: 1.8rem;
+            position: relative;
+        }
+        
+        .carousel-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: #9220a9;
+            margin: 0.5rem auto;
+        }
+        
+        /* Carousel styles */
+        .bachata-carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            background-color: white;
+        }
+        
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .carousel-slide {
+            flex: 0 0 100%;
+            position: relative;
+        }
+        
+        .carousel-image-container {
+            position: relative;
+            width: 100%;
+            padding-top: 125%; /* 4:5 aspect ratio (5/4 = 1.25) */
+            overflow: hidden;
+        }
+        
+        .carousel-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .carousel-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            color: white;
+            padding: 1.5rem 1rem 1rem;
+        }
+        
+        .image-title {
+            font-size: 1.3rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .image-description {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        /* Navigation controls */
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        
+        .carousel-button {
+            background: #440069;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 0 0.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .carousel-button:hover {
+            background: #9220a9;
+            transform: translateY(-2px);
+        }
+        
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+        
+        .carousel-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .carousel-dot.active {
+            background: #440069;
+        }
+        
+        /* Schedule info section */
+        .schedule-info {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .schedule-info h2 {
+            color: #440069;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+        
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .schedule-item {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #9220a9;
+        }
+        
+        .schedule-time {
+            font-weight: bold;
+            color: #440069;
+            margin-bottom: 0.5rem;
+        }
+        
+        .schedule-event {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .schedule-location {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        /* Footer styles */
+        .festival-footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .festival-title {
+                font-size: 2rem;
+            }
+            
+            .carousel-title {
+                font-size: 1.5rem;
+            }
+            
+            .schedule-info {
+                padding: 1.5rem;
+            }
+            
+            .schedule-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .image-title {
+                font-size: 1.1rem;
+            }
+            
+            .image-description {
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .festival-title {
+                font-size: 1.7rem;
+            }
+            
+            .festival-subtitle {
+                font-size: 1rem;
+            }
+            
+            .carousel-title {
+                font-size: 1.3rem;
+            }
+            
+            .image-overlay {
+                padding: 1rem 0.8rem 0.8rem;
+            }
+            
+            .image-title {
+                font-size: 1rem;
+            }
+            
+            .image-description {
+                font-size: 0.75rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header class="festival-header">
+        <h1 class="festival-title">Frankfurt Bachata Festival</h1>
+        <p class="festival-subtitle">Experience the rhythm, feel the passion</p>
+
+              <a href="index.html"  class="button" style="color: #f8f9fa;"><h1 class="festival-title">HOME</p></a>
+
+    </header>
+    
+    <div class="schedule-carousel-container">
+        <h2 class="carousel-title">Festival Highlights</h2>
+        
+        <div class="bachata-carousel">
+            <div class="carousel-track">
+                <!-- Slide 1 -->
+                <div class="carousel-slide">
+                    <div class="carousel-image-container">
+                        <img src="images/agenda/title.webp" alt="Bachata dancers" class="carousel-image">
+                        <div class="image-overlay">
+                            <h3 class="image-title">Agenda Overview</h3>
+                            <p class="image-description">Check the full agenda for all events and workshops</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="carousel-slide">
+                    <div class="carousel-image-container">
+                        <img src="images/agenda/thursday.webp" alt="Dance workshop" class="carousel-image">
+                        <div class="image-overlay">
+                            <h3 class="image-title">Thursday Schedule</h3>
+                            <p class="image-description">Workshops and Preparty at Frankfurt City</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 3 -->
+                <div class="carousel-slide">
+                    <div class="carousel-image-container">
+                        <img src="images/agenda/friday.webp" alt="bachata shows performance" class="carousel-image">
+                        <div class="image-overlay">
+                            <h3 class="image-title">Friday Schedule</h3>
+                            <p class="image-description">Workshops, Day Socials & Friday Night Party with Workshops</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 4 -->
+                <div class="carousel-slide">
+                    <div class="carousel-image-container">
+                        <img src="images/agenda/saturday.webp" alt="Live music performance" class="carousel-image">
+                        <div class="image-overlay">
+                            <h3 class="image-title">Saturday Schedule</h3>
+                            <p class="image-description">Workshops, Day Socials, Social Dancing Competition & Saturday Night Party with Workshops with Sebas Garreta Live Concert</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 5 -->
+                <div class="carousel-slide">
+                    <div class="carousel-image-container">
+                        <img src="images/agenda/sunday.webp" alt="workshops" class="carousel-image">
+                        <div class="image-overlay">
+                            <h3 class="image-title">Sunday Schedule</h3>
+                            <p class="image-description">Workshops, Practices & Mentoring Classes</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="carousel-nav">
+            <button class="carousel-button prev-button">&#10094;</button>
+            <button class="carousel-button next-button">&#10095;</button>
+        </div>
+        
+        <div class="carousel-dots">
+            <!-- Dots will be generated by JavaScript -->
+        </div>
+    </div>
+    
+    <div class="schedule-info">
+        <h2>Download Festival Schedule</h2>
+        <a href="https://drive.google.com/drive/folders/1Vq442gAiiEInb5J3QHbVJCij4Gag6e-T?usp=sharing"><p>Google Drive Link</p>  </a>
+
+    </div>
+    
+    <footer class="festival-footer">
+        <p>Frankfurt Bachata Festival &copy; 2023 | All Rights Reserved</p>
+        <p>Follow us on social media for updates</p>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.querySelector('.carousel-track');
+            const slides = Array.from(track.children);
+            const nextButton = document.querySelector('.next-button');
+            const prevButton = document.querySelector('.prev-button');
+            const dotsContainer = document.querySelector('.carousel-dots');
+            
+            // Create dots
+            slides.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('carousel-dot');
+                if (index === 0) dot.classList.add('active');
+                dotsContainer.appendChild(dot);
+            });
+            
+            const dots = Array.from(dotsContainer.children);
+            
+            let currentSlide = 0;
+            let autoSlideInterval;
+            
+            // Initialize carousel
+            function initCarousel() {
+                const slideWidth = slides[0].getBoundingClientRect().width;
+                
+                // Arrange slides next to one another
+                slides.forEach((slide, index) => {
+                    slide.style.left = slideWidth * index + 'px';
+                });
+                
+                // Start auto-advance
+                startAutoSlide();
+            }
+            
+            // Move to specific slide
+            const moveToSlide = (targetIndex) => {
+                const slideWidth = slides[0].getBoundingClientRect().width;
+                track.style.transform = 'translateX(-' + (slideWidth * targetIndex) + 'px)';
+                currentSlide = targetIndex;
+                updateDots();
+            }
+            
+            // Update active dot
+            const updateDots = () => {
+                dots.forEach(dot => dot.classList.remove('active'));
+                dots[currentSlide].classList.add('active');
+            }
+            
+            // Next button click
+            nextButton.addEventListener('click', () => {
+                resetAutoSlide();
+                const nextSlide = (currentSlide + 1) % slides.length;
+                moveToSlide(nextSlide);
+            });
+            
+            // Previous button click
+            prevButton.addEventListener('click', () => {
+                resetAutoSlide();
+                const prevSlide = (currentSlide - 1 + slides.length) % slides.length;
+                moveToSlide(prevSlide);
+            });
+            
+            // Dot click
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    resetAutoSlide();
+                    moveToSlide(index);
+                });
+            });
+            
+            // Auto-advance carousel
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(() => {
+                    const nextSlide = (currentSlide + 1) % slides.length;
+                    moveToSlide(nextSlide);
+                }, 5000);
+            }
+            
+            function resetAutoSlide() {
+                clearInterval(autoSlideInterval);
+                startAutoSlide();
+            }
+            
+            // Initialize carousel after images are loaded
+            window.addEventListener('load', initCarousel);
+            
+            // Fallback initialization
+            setTimeout(initCarousel, 100);
+        });
+    </script>
+</body>
+</html>
