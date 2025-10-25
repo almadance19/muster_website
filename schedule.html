@@ -33,27 +33,53 @@
             margin-bottom: 0.5rem;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
-
-        a {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-        }
         
         .festival-subtitle {
             font-size: 1.2rem;
             opacity: 0.9;
             font-weight: 300;
+            margin-bottom: 1rem;
         }
         
-        /* Carousel container styles */
-        .schedule-carousel-container {
+        /* Premium 3D Home Button */
+        .home-button {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(145deg, #ffffff, #e6e6e6);
+            color: #440069;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1),
+                        -5px -5px 15px rgba(255, 255, 255, 0.7);
+            border: none;
+            position: relative;
+        }
+
+        .home-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.15),
+                        -8px -8px 20px rgba(255, 255, 255, 0.8);
+            color: #9220a9;
+        }
+
+        .home-button:active {
+            transform: translateY(0);
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1),
+                        inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Photo Grid Container */
+        .photo-grid-container {
             max-width: 1200px;
             margin: 2rem auto;
             padding: 0 1rem;
         }
         
-        .carousel-title {
+        .grid-title {
             text-align: center;
             margin-bottom: 1.5rem;
             color: #440069;
@@ -61,7 +87,7 @@
             position: relative;
         }
         
-        .carousel-title:after {
+        .grid-title:after {
             content: '';
             display: block;
             width: 80px;
@@ -70,113 +96,72 @@
             margin: 0.5rem auto;
         }
         
-        /* Carousel styles */
-        .bachata-carousel {
+        /* Photo Grid Styles */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .photo-item {
             position: relative;
-            overflow: hidden;
             border-radius: 12px;
+            overflow: hidden;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-            background-color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: white;
         }
         
-        .carousel-track {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
+        .photo-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
         }
         
-        .carousel-slide {
-            flex: 0 0 100%;
-            position: relative;
-        }
-        
-        .carousel-image-container {
+        .photo-image-container {
             position: relative;
             width: 100%;
-            padding-top: 125%; /* 4:5 aspect ratio (5/4 = 1.25) */
+            padding-top: 125%; /* 4:5 aspect ratio */
             overflow: hidden;
         }
         
-        .carousel-image {
+        .photo-image {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
+            transition: transform 0.5s ease;
         }
         
-        .carousel-image:hover {
+        .photo-item:hover .photo-image {
             transform: scale(1.05);
         }
         
-        .image-overlay {
+        .photo-overlay {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
             color: white;
             padding: 1.5rem 1rem 1rem;
+            transform: translateY(5px);
+            transition: transform 0.3s ease;
         }
         
-        .image-title {
+        .photo-item:hover .photo-overlay {
+            transform: translateY(0);
+        }
+        
+        .photo-title {
             font-size: 1.3rem;
             margin-bottom: 0.3rem;
         }
         
-        .image-description {
+        .photo-description {
             font-size: 0.9rem;
             opacity: 0.9;
-        }
-        
-        /* Navigation controls */
-        .carousel-nav {
-            display: flex;
-            justify-content: center;
-            margin-top: 1.5rem;
-        }
-        
-        .carousel-button {
-            background: #440069;
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin: 0 0.5rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        }
-        
-        .carousel-button:hover {
-            background: #9220a9;
-            transform: translateY(-2px);
-        }
-        
-        .carousel-dots {
-            display: flex;
-            justify-content: center;
-            margin-top: 1rem;
-        }
-        
-        .carousel-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #ddd;
-            margin: 0 5px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-        
-        .carousel-dot.active {
-            background: #440069;
         }
         
         /* Schedule info section */
@@ -187,42 +172,31 @@
             background: white;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
         
         .schedule-info h2 {
             color: #440069;
             margin-bottom: 1.5rem;
-            text-align: center;
             font-size: 1.8rem;
         }
-        
-        .schedule-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .schedule-item {
-            padding: 1.5rem;
-            background: #f8f9fa;
+
+        .drive-link {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #440069;
+            color: white;
+            text-decoration: none;
             border-radius: 8px;
-            border-left: 4px solid #9220a9;
-        }
-        
-        .schedule-time {
             font-weight: bold;
-            color: #440069;
-            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
-        
-        .schedule-event {
-            font-size: 1.1rem;
-            margin-bottom: 0.3rem;
-        }
-        
-        .schedule-location {
-            font-size: 0.9rem;
-            color: #666;
+
+        .drive-link:hover {
+            background: #9220a9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
         
         /* Footer styles */
@@ -235,29 +209,47 @@
         }
         
         /* Responsive adjustments */
-        @media (max-width: 768px) {
+        @media (min-width: 576px) {
+            .photo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 768px) {
             .festival-title {
                 font-size: 2rem;
             }
             
-            .carousel-title {
+            .grid-title {
                 font-size: 1.5rem;
+            }
+            
+            .photo-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
             
             .schedule-info {
                 padding: 1.5rem;
             }
             
-            .schedule-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .image-title {
+            .photo-title {
                 font-size: 1.1rem;
             }
             
-            .image-description {
+            .photo-description {
                 font-size: 0.8rem;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .photo-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .photo-grid {
+                grid-template-columns: repeat(5, 1fr);
             }
         }
         
@@ -270,207 +262,101 @@
                 font-size: 1rem;
             }
             
-            .carousel-title {
+            .grid-title {
                 font-size: 1.3rem;
             }
             
-            .image-overlay {
+            .photo-overlay {
                 padding: 1rem 0.8rem 0.8rem;
             }
             
-            .image-title {
+            .photo-title {
                 font-size: 1rem;
             }
             
-            .image-description {
+            .photo-description {
                 font-size: 0.75rem;
             }
         }
-
     </style>
 </head>
 <body>
     <header class="festival-header">
         <h1 class="festival-title">Frankfurt Bachata Festival</h1>
         <p class="festival-subtitle">Experience the rhythm, feel the passion</p>
-
-              <a href="index.html"  class="button" style="color: #f8f9fa;"><h1 class="festival-title">HOME</p></a>
-
+        <a href="index.html" class="home-button">HOME</a>
     </header>
     
-    <div class="schedule-carousel-container">
-        <h2 class="carousel-title">Festival Highlights</h2>
+    <div class="photo-grid-container">
+        <h2 class="grid-title">Festival Schedule</h2>
         
-        <div class="bachata-carousel">
-            <div class="carousel-track">
-                <!-- Slide 1 -->
-                <div class="carousel-slide">
-                    <div class="carousel-image-container">
-                        <img src="images/agenda/title.webp" alt="Bachata dancers" class="carousel-image">
-                        <div class="image-overlay">
-                            <h3 class="image-title">Agenda Overview</h3>
-                            <p class="image-description">Check the full agenda for all events and workshops</p>
-                        </div>
+        <div class="photo-grid">
+            <!-- Photo 1 -->
+            <div class="photo-item">
+                <div class="photo-image-container">
+                    <img src="images/agenda/11.webp" alt="Bachata dancers" class="photo-image">
+                    <div class="photo-overlay">
+                        <h3 class="photo-title">Agenda Overview</h3>
+                        <p class="photo-description">Check the full agenda for all events and workshops</p>
                     </div>
                 </div>
-                
-                <!-- Slide 2 -->
-                <div class="carousel-slide">
-                    <div class="carousel-image-container">
-                        <img src="images/agenda/thursday.webp" alt="Dance workshop" class="carousel-image">
-                        <div class="image-overlay">
-                            <h3 class="image-title">Thursday Schedule</h3>
-                            <p class="image-description">Workshops and Preparty at Frankfurt City</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Slide 3 -->
-                <div class="carousel-slide">
-                    <div class="carousel-image-container">
-                        <img src="images/agenda/friday.webp" alt="bachata shows performance" class="carousel-image">
-                        <div class="image-overlay">
-                            <h3 class="image-title">Friday Schedule</h3>
-                            <p class="image-description">Workshops, Day Socials & Friday Night Party with Workshops</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Slide 4 -->
-                <div class="carousel-slide">
-                    <div class="carousel-image-container">
-                        <img src="images/agenda/saturday.webp" alt="Live music performance" class="carousel-image">
-                        <div class="image-overlay">
-                            <h3 class="image-title">Saturday Schedule</h3>
-                            <p class="image-description">Workshops, Day Socials, Social Dancing Competition & Saturday Night Party with Workshops with Sebas Garreta Live Concert</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Slide 5 -->
-                <div class="carousel-slide">
-                    <div class="carousel-image-container">
-                        <img src="images/agenda/sunday.webp" alt="workshops" class="carousel-image">
-                        <div class="image-overlay">
-                            <h3 class="image-title">Sunday Schedule</h3>
-                            <p class="image-description">Workshops, Practices & Mentoring Classes</p>
-                        </div>
-                    </div>
-                </div>
-                
             </div>
-        </div>
-        
-        <div class="carousel-nav">
-            <button class="carousel-button prev-button">&#10094;</button>
-            <button class="carousel-button next-button">&#10095;</button>
-        </div>
-        
-        <div class="carousel-dots">
-            <!-- Dots will be generated by JavaScript -->
+            
+            <!-- Photo 2 -->
+            <div class="photo-item">
+                <div class="photo-image-container">
+                    <img src="images/agenda/7.webp" alt="Dance workshop" class="photo-image">
+                    <div class="photo-overlay">
+                        <h3 class="photo-title">Thursday Schedule</h3>
+                        <p class="photo-description">Workshops and Preparty at Frankfurt City</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Photo 3 -->
+            <div class="photo-item">
+                <div class="photo-image-container">
+                    <img src="images/agenda/8.webp" alt="bachata shows performance" class="photo-image">
+                    <div class="photo-overlay">
+                        <h3 class="photo-title">Friday Schedule</h3>
+                        <p class="photo-description">Workshops, Day Socials & Friday Night Party with Workshops</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Photo 4 -->
+            <div class="photo-item">
+                <div class="photo-image-container">
+                    <img src="images/agenda/9.webp" alt="Live music performance" class="photo-image">
+                    <div class="photo-overlay">
+                        <h3 class="photo-title">Saturday Schedule</h3>
+                        <p class="photo-description">Workshops, Day Socials, Social Dancing Competition & Saturday Night Party</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Photo 5 -->
+            <div class="photo-item">
+                <div class="photo-image-container">
+                    <img src="images/agenda/10.webp" alt="workshops" class="photo-image">
+                    <div class="photo-overlay">
+                        <h3 class="photo-title">Sunday Schedule</h3>
+                        <p class="photo-description">Workshops, Practices & Mentoring Classes</p>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </div>
     
     <div class="schedule-info">
         <h2>Download Festival Schedule</h2>
-        <a href="https://drive.google.com/drive/folders/1Vq442gAiiEInb5J3QHbVJCij4Gag6e-T?usp=sharing"><p>Google Drive Link</p>  </a>
-
+        <a href="https://drive.google.com/drive/folders/1Vq442gAiiEInb5J3QHbVJCij4Gag6e-T?usp=sharing" class="drive-link">Google Drive Link</a>
     </div>
     
     <footer class="festival-footer">
         <p>Frankfurt Bachata Festival &copy; 2023 | All Rights Reserved</p>
         <p>Follow us on social media for updates</p>
     </footer>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const track = document.querySelector('.carousel-track');
-            const slides = Array.from(track.children);
-            const nextButton = document.querySelector('.next-button');
-            const prevButton = document.querySelector('.prev-button');
-            const dotsContainer = document.querySelector('.carousel-dots');
-            
-            // Create dots
-            slides.forEach((_, index) => {
-                const dot = document.createElement('div');
-                dot.classList.add('carousel-dot');
-                if (index === 0) dot.classList.add('active');
-                dotsContainer.appendChild(dot);
-            });
-            
-            const dots = Array.from(dotsContainer.children);
-            
-            let currentSlide = 0;
-            let autoSlideInterval;
-            
-            // Initialize carousel
-            function initCarousel() {
-                const slideWidth = slides[0].getBoundingClientRect().width;
-                
-                // Arrange slides next to one another
-                slides.forEach((slide, index) => {
-                    slide.style.left = slideWidth * index + 'px';
-                });
-                
-                // Start auto-advance
-                startAutoSlide();
-            }
-            
-            // Move to specific slide
-            const moveToSlide = (targetIndex) => {
-                const slideWidth = slides[0].getBoundingClientRect().width;
-                track.style.transform = 'translateX(-' + (slideWidth * targetIndex) + 'px)';
-                currentSlide = targetIndex;
-                updateDots();
-            }
-            
-            // Update active dot
-            const updateDots = () => {
-                dots.forEach(dot => dot.classList.remove('active'));
-                dots[currentSlide].classList.add('active');
-            }
-            
-            // Next button click
-            nextButton.addEventListener('click', () => {
-                resetAutoSlide();
-                const nextSlide = (currentSlide + 1) % slides.length;
-                moveToSlide(nextSlide);
-            });
-            
-            // Previous button click
-            prevButton.addEventListener('click', () => {
-                resetAutoSlide();
-                const prevSlide = (currentSlide - 1 + slides.length) % slides.length;
-                moveToSlide(prevSlide);
-            });
-            
-            // Dot click
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    resetAutoSlide();
-                    moveToSlide(index);
-                });
-            });
-            
-            // Auto-advance carousel
-            function startAutoSlide() {
-                autoSlideInterval = setInterval(() => {
-                    const nextSlide = (currentSlide + 1) % slides.length;
-                    moveToSlide(nextSlide);
-                }, 5000);
-            }
-            
-            function resetAutoSlide() {
-                clearInterval(autoSlideInterval);
-                startAutoSlide();
-            }
-            
-            // Initialize carousel after images are loaded
-            window.addEventListener('load', initCarousel);
-            
-            // Fallback initialization
-            setTimeout(initCarousel, 100);
-        });
-    </script>
 </body>
 </html>
